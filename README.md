@@ -35,12 +35,12 @@ Then prompt, e.g.:
 > LA22 Ø22mm metal pushbutton switch, in English and 简体中文. Follow `FOR-AI.md` and run its
 > self‑check."
 
-Raw URLs (after you push to GitHub — replace `OWNER`):
+Raw URLs (live now):
 ```
-https://raw.githubusercontent.com/OWNER/wzjh-design-system/main/wzjh-design-system.md
-https://raw.githubusercontent.com/OWNER/wzjh-design-system/main/FOR-AI.md
-https://raw.githubusercontent.com/OWNER/wzjh-design-system/main/tokens/wzjh-tokens.css
-https://raw.githubusercontent.com/OWNER/wzjh-design-system/main/wzjh.css
+https://raw.githubusercontent.com/patrickw7707/wzjh-design-system/main/wzjh-design-system.md
+https://raw.githubusercontent.com/patrickw7707/wzjh-design-system/main/FOR-AI.md
+https://raw.githubusercontent.com/patrickw7707/wzjh-design-system/main/tokens/wzjh-tokens.css
+https://raw.githubusercontent.com/patrickw7707/wzjh-design-system/main/wzjh.css
 ```
 Agents that honor the convention can also discover everything from [`llms.txt`](llms.txt).
 
@@ -82,11 +82,11 @@ wzjh-design-system/
 ```bash
 git add -A && git commit -m "JINHONG design system v1.0.0"
 git branch -M main
-git remote add origin git@github.com:OWNER/wzjh-design-system.git
+git remote add origin git@github.com:patrickw7707/wzjh-design-system.git
 git push -u origin main
 ```
 In **Settings → Pages**, set Source = "GitHub Actions". The included workflow publishes
-`index.html` at `https://OWNER.github.io/wzjh-design-system/`.
+`index.html` at `https://patrickw7707.github.io/wzjh-design-system/`.
 
 ## The one rule everyone forgets
 
