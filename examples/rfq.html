@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a quote · JINHONG</title>
+  <meta name="description" content="Submit a request for quotation (RFQ) for JINHONG industrial control components. Tiered pricing by volume. Technical response within 1 business day.">
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../tokens/wzjh-tokens.css">
+  <link rel="stylesheet" href="../wzjh.css">
+  <style>
+    /* ── Page-local layout helpers — all values reference tokens ────────────── */
+
+    /* Skip navigation link */
+    .rfq-skip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      transform: translateY(-100%);
+      transition: transform var(--wzjh-duration-2) var(--wzjh-ease);
+    }
+    .rfq-skip:focus,
+    .rfq-skip:focus-visible {
+      transform: translateY(0);
+    }
+
+    /* Bilingual subtitle under H1 */
+    .rfq-subtitle {
+      font-size: var(--wzjh-size-h4);
+      font-weight: var(--wzjh-weight-medium);
+      color: var(--wzjh-text-muted);
+      margin: var(--wzjh-space-1) 0 var(--wzjh-space-5);
+      line-height: var(--wzjh-lh-cjk);
+    }
+
+    /* Two-column form / aside layout */
+    .rfq-layout {
+      display: grid;
+      gap: var(--wzjh-space-10);
+      align-items: start;
+    }
+    @media (min-width: 64rem) {
+      .rfq-layout {
+        grid-template-columns: 1fr 22rem;
+      }
+    }
+
+    /* Aside info panel — card with brand-blue top accent */
+    .rfq-info-panel {
+      border-top: 3px solid var(--wzjh-brand);
+      padding: var(--wzjh-space-6);
+    }
+    @media (min-width: 64rem) {
+      .rfq-info-panel {
+        position: sticky;
+        top: calc(4.5rem + var(--wzjh-space-6));
+      }
+    }
+
+    /* Aside address block */
+    .rfq-address {
+      font-style: normal;
+      font-size: var(--wzjh-size-sm);
+      color: var(--wzjh-text-secondary);
+      line-height: var(--wzjh-lh-body);
+      border-left: 3px solid var(--wzjh-border);
+      padding-left: var(--wzjh-space-4);
+      margin: var(--wzjh-space-5) 0;
+    }
+
+    /* Trust points list inside aside */
+    .rfq-trust {
+      display: grid;
+      gap: var(--wzjh-space-3);
+      margin-top: var(--wzjh-space-5);
+    }
+
+    /* Note about required fields */
+    .rfq-required-note {
+      font-size: var(--wzjh-size-sm);
+      color: var(--wzjh-text-muted);
+      margin-bottom: var(--wzjh-space-6);
+    }
+    .rfq-required-note .wzjh-req {
+      color: var(--wzjh-danger);
+    }
+
+    /* Checkbox field row */
+    .rfq-field--check {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--wzjh-space-3);
+      min-height: var(--wzjh-touch-min);
+      padding-block: var(--wzjh-space-2);
+    }
+    .rfq-field--check input[type="checkbox"] {
+      flex: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-top: 0.1875rem;
+      accent-color: var(--wzjh-action);
+      cursor: pointer;
+    }
+    .rfq-check-label {
+      font-size: var(--wzjh-size-sm);
+      color: var(--wzjh-text);
+      cursor: pointer;
+      line-height: var(--wzjh-lh-body);
+    }
+    .rfq-check-label .wzjh-req {
+      color: var(--wzjh-danger);
+    }
+
+    /* File input — align selector button to token styles */
+    input[type="file"].wzjh-input {
+      padding: var(--wzjh-space-3);
+      cursor: pointer;
+    }
+    input[type="file"].wzjh-input::file-selector-button {
+      background: var(--wzjh-action-subtle);
+      color: var(--wzjh-action);
+      border: var(--wzjh-border-width) solid var(--wzjh-action);
+      border-radius: var(--wzjh-radius);
+      padding: var(--wzjh-space-2) var(--wzjh-space-4);
+      margin-right: var(--wzjh-space-3);
+      font-size: var(--wzjh-size-sm);
+      font-weight: var(--wzjh-weight-medium);
+      cursor: pointer;
+      font-family: var(--wzjh-font-sans);
+      transition: background var(--wzjh-duration-1) var(--wzjh-ease),
+                  color var(--wzjh-duration-1) var(--wzjh-ease);
+    }
+    input[type="file"].wzjh-input::file-selector-button:hover {
+      background: var(--wzjh-action);
+      color: var(--wzjh-text-on-brand);
+    }
+
+    /* Dark section: override stat num and label colors for proper contrast */
+    .wzjh-section--dark .wzjh-stat__num {
+      color: var(--wzjh-white);
+    }
+    .wzjh-section--dark .wzjh-stat__label {
+      color: var(--wzjh-footer-fg);
+    }
+  </style>
+</head>
+<body>
+
+<a class="wzjh-btn wzjh-btn--primary wzjh-btn--sm rfq-skip" href="#rfq-form">Skip to form</a>
+
+<!-- ── Header ───────────────────────────────────────────────────────────────── -->
+<header class="wzjh-header">
+  <div class="wzjh-container wzjh-header__bar">
+    <a class="wzjh-header__logo" href="../index.html" aria-label="JINHONG home">
+      <img src="../assets/logo/wzjh-logo.svg" alt="JINHONG" width="200">
+    </a>
+    <nav class="wzjh-nav" aria-label="Primary">
+      <a href="#">Products</a>
+      <a href="#">Technical Capabilities</a>
+      <a href="#">About Us</a>
+      <a href="#">Download Center</a>
+      <a href="#" aria-current="page">Contact</a>
+    </nav>
+    <a class="wzjh-btn wzjh-btn--primary wzjh-btn--sm" href="#rfq-form">Request a quote</a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ── Page intro ─────────────────────────────────────────────────────────── -->
+  <section class="wzjh-section wzjh-section--tight wzjh-section--band">
+    <div class="wzjh-container">
+
+      <nav aria-label="Breadcrumb">
+        <ol class="wzjh-breadcrumb">
+          <li><a href="../index.html">Home</a></li>
+          <li><span>Contact</span></li>
+          <li aria-current="page"><span>Request a quote</span></li>
+        </ol>
+      </nav>
+
+      <div style="margin-top:var(--wzjh-space-6)">
+        <span class="wzjh-overline">Contact · 联系我们</span>
+        <h1>Request a quote</h1>
+        <p lang="zh-CN" class="rfq-subtitle">索取报价</p>
+        <p class="wzjh-lead" style="max-width:62ch">Submit product and volume details. We respond within 1 business day with technical specifications, unit pricing at your stated annual volume, and lead time from our production facility in Wenzhou, Zhejiang.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Form + Aside ────────────────────────────────────────────────────────── -->
+  <section class="wzjh-section wzjh-section--tight">
+    <div class="wzjh-container">
+      <div class="rfq-layout">
+
+        <!-- ── Left: RFQ form ─────────────────────────────────────────────── -->
+        <div>
+
+          <div class="wzjh-alert wzjh-alert--info" role="note">
+            <div>
+              <strong>Response time.</strong> Every enquiry receives a technical reply — with
+              specifications, pricing at your stated volume, and lead time — within
+              <strong>1 business day</strong>.
+            </div>
+          </div>
+
+          <p class="rfq-required-note" style="margin-top:var(--wzjh-space-5)">
+            Fields marked
+            <span class="wzjh-req" aria-hidden="true">*</span><span class="wzjh-visually-hidden">with an asterisk</span>
+            are required.
+          </p>
+
+          <form id="rfq-form" novalidate aria-label="Request for quotation">
+
+            <!-- Full name + Company -->
+            <div class="wzjh-grid wzjh-grid--2">
+              <div class="wzjh-field">
+                <label class="wzjh-label" for="rfq-name">
+                  Full name
+                  <span class="wzjh-req" aria-hidden="true">*</span><span class="wzjh-visually-hidden"> (required)</span>
+                </label>
+                <input
+                  class="wzjh-input"
+                  id="rfq-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required>
+              </div>
+              <div class="wzjh-field">
+                <label class="wzjh-label" for="rfq-company">
+                  Company
+                  <span class="wzjh-req" aria-hidden="true">*</span><span class="wzjh-visually-hidden"> (required)</span>
+                </label>
+                <input
+                  class="wzjh-input"
+                  id="rfq-company"
+                  name="company"
+                  type="text"
+                  autocomplete="organization"
+                  required>
+              </div>
+            </div>
+
+            <!-- Work email — error state demo -->
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="rfq-email">
+                Work email
+                <span class="wzjh-req" aria-hidden="true">*</span><span class="wzjh-visually-hidden"> (required)</span>
+              </label>
+              <input
+                class="wzjh-input wzjh-input--invalid"
+                id="rfq-email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                value="john.doe@"
+                aria-invalid="true"
+                aria-describedby="rfq-email-error"
+                required>
+              <p class="wzjh-error" id="rfq-email-error" role="alert">
+                Enter a valid work email address — for example: name@company.com.
+              </p>
+            </div>
+
+            <!-- Country / region -->
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="rfq-country">Country / region</label>
+              <select class="wzjh-select" id="rfq-country" name="country" autocomplete="country-name">
+                <option value="">Select country / region…</option>
+                <option>Australia</option>
+                <option>Brazil</option>
+                <option>Canada</option>
+                <option>China</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>India</option>
+                <option>Italy</option>
+                <option>Japan</option>
+                <option>Malaysia</option>
+                <option>Mexico</option>
+                <option>Netherlands</option>
+                <option>Poland</option>
+                <option>Russia</option>
+                <option>South Korea</option>
+                <option>Spain</option>
+                <option>Turkey</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>Vietnam</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <!-- Product / model + Product family -->
+            <div class="wzjh-grid wzjh-grid--2">
+              <div class="wzjh-field">
+                <label class="wzjh-label" for="rfq-model">Product / model number</label>
+                <input
+                  class="wzjh-input"
+                  id="rfq-model"
+                  name="model"
+                  type="text"
+                  placeholder="e.g. LA22-11 Ø22mm">
+                <p class="wzjh-help">Part number or series name if known.</p>
+              </div>
+              <div class="wzjh-field">
+                <label class="wzjh-label" for="rfq-family">Product family</label>
+                <select class="wzjh-select" id="rfq-family" name="family">
+                  <option value="">Select product family…</option>
+                  <option>Metal Pushbutton</option>
+                  <option>Plastic Pushbutton</option>
+                  <option>Relay</option>
+                  <option>Tower Light</option>
+                  <option>Wireless Switch</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Annual quantity -->
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="rfq-qty">Annual quantity</label>
+              <input
+                class="wzjh-input"
+                id="rfq-qty"
+                name="qty"
+                inputmode="numeric"
+                placeholder="e.g. 5,000 pcs">
+              <p class="wzjh-help">Tiered pricing applies at 500, 2,000, and 10,000 pcs per year. Higher annual volumes receive preferential lead times.</p>
+            </div>
+
+            <!-- Required specifications -->
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="rfq-specs">Required specifications</label>
+              <textarea
+                class="wzjh-textarea"
+                id="rfq-specs"
+                name="specs"
+                placeholder="Voltage, contact config, IP rating, mounting diameter, application environment…"></textarea>
+              <p class="wzjh-help">Include operating voltage, contact configuration (e.g. 1NO+1NC), required IP rating, mounting diameter, and target environment.</p>
+            </div>
+
+            <!-- Technical drawings upload -->
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="rfq-drawings">Technical drawings or reference files</label>
+              <input
+                class="wzjh-input"
+                id="rfq-drawings"
+                name="drawings"
+                type="file"
+                accept=".pdf,.dwg,.dxf,.step,.png,.jpg,.jpeg"
+                aria-describedby="rfq-drawings-help">
+              <p class="wzjh-help" id="rfq-drawings-help">PDF, DWG, DXF, STEP, or images accepted. Max 20 MB. Optional.</p>
+            </div>
+
+            <!-- Consent checkbox -->
+            <div class="wzjh-field rfq-field--check">
+              <input
+                type="checkbox"
+                id="rfq-consent"
+                name="consent"
+                required
+                aria-required="true">
+              <label class="rfq-check-label" for="rfq-consent">
+                I agree to JINHONG (Wenzhou Jinhong Electric Co., Ltd.) processing this
+                enquiry in accordance with the <a href="#">Privacy Notice</a>.
+                <span class="wzjh-req" aria-hidden="true">*</span><span class="wzjh-visually-hidden"> (required)</span>
+              </label>
+            </div>
+
+            <button class="wzjh-btn wzjh-btn--primary wzjh-btn--lg" type="submit">
+              Send request
+            </button>
+
+          </form>
+        </div>
+
+        <!-- ── Right: Contact info aside ──────────────────────────────────── -->
+        <aside aria-label="Contact information">
+          <div class="wzjh-card rfq-info-panel">
+
+            <h2 class="wzjh-h4" style="margin-bottom:var(--wzjh-space-1)">Direct contact</h2>
+            <p class="wzjh-small wzjh-muted">Wenzhou Jinhong Electric Co., Ltd.</p>
+
+            <address class="rfq-address">
+              <span lang="en">Wenzhou, Zhejiang, China</span><br>
+              <span lang="zh-CN">中国浙江温州</span>
+            </address>
+
+            <ul class="wzjh-stack">
+              <li>
+                <a href="https://www.wzjh.cc" target="_blank" rel="noopener">www.wzjh.cc</a>
+              </li>
+              <li>
+                <a href="#">Download Center — datasheets &amp; CAD drawings</a>
+              </li>
+            </ul>
+
+            <p class="wzjh-small wzjh-muted" style="margin-top:var(--wzjh-space-5)">
+              WeChat and Douyin channels are available for verified trade partners.
+              Contact us via this form to receive official channel details.
+            </p>
+
+            <hr class="wzjh-divider">
+
+            <h3 class="wzjh-h4" style="margin-bottom:var(--wzjh-space-1)">Why JINHONG</h3>
+            <p lang="zh-CN" class="wzjh-small wzjh-muted" style="margin-bottom:var(--wzjh-space-4)">为何选择金宏</p>
+
+            <div class="rfq-trust">
+              <span class="wzjh-status wzjh-status--ok">ISO-grade quality control and incoming inspection</span>
+              <span class="wzjh-status wzjh-status--ok">In-house environmental and life-cycle testing lab</span>
+              <span class="wzjh-status wzjh-status--ok">Global export across 6 industrial markets</span>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trust / stat band ───────────────────────────────────────────────────── -->
+  <section class="wzjh-section wzjh-section--tight wzjh-section--dark" aria-label="Key facts">
+    <div class="wzjh-container">
+      <div class="wzjh-grid wzjh-grid--3">
+        <div class="wzjh-stat">
+          <div class="wzjh-stat__num">≤1 day</div>
+          <div class="wzjh-stat__label">Technical response time</div>
+        </div>
+        <div class="wzjh-stat">
+          <div class="wzjh-stat__num">12</div>
+          <div class="wzjh-stat__label">Product families in catalogue</div>
+        </div>
+        <div class="wzjh-stat">
+          <div class="wzjh-stat__num">6</div>
+          <div class="wzjh-stat__label">Industrial markets served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="wzjh-footer">
+  <div class="wzjh-container wzjh-footer__grid">
+    <div>
+      <img src="../assets/logo/wzjh-logo-white.svg" alt="JINHONG" style="height:2.5rem">
+      <p style="margin-top:var(--wzjh-space-4);max-width:30ch">Mid-to-high-end pushbutton switches, indicator lights, and industrial control components.</p>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">Metal Pushbutton</a></li>
+        <li><a href="#">Plastic Pushbutton</a></li>
+        <li><a href="#">Relay &amp; Sockets</a></li>
+        <li><a href="#">Tower Light</a></li>
+        <li><a href="#">Wireless Switch</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Technical Capabilities</a></li>
+        <li><a href="#">Download Center</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="wzjh-stack">
+        <li lang="en">Wenzhou, Zhejiang, China</li>
+        <li lang="zh-CN">中国浙江温州</li>
+        <li><a href="https://www.wzjh.cc">www.wzjh.cc</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wzjh-container wzjh-footer__bottom">© 2026 Wenzhou Jinhong Electric Co., Ltd. (温州金宏电器有限公司) · All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>

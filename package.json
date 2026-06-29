@@ -1,0 +1,35 @@
+{
+  "name": "wzjh-design-system",
+  "version": "1.0.0",
+  "description": "JINHONG (WZJH) Design System — token-driven, AI-consumable corporate design for Wenzhou Jinhong Electric Co., Ltd. Build on-brand websites and presentations from any AI tool.",
+  "homepage": "https://www.wzjh.cc",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "wzjh-design-system.md",
+    "FOR-AI.md",
+    "FOR-PRESENTATIONS.md",
+    "llms.txt",
+    "wzjh.css",
+    "tokens/",
+    "presentation/",
+    "assets/"
+  ],
+  "scripts": {
+    "verify": "node scripts/check-contrast.mjs",
+    "test": "node scripts/check-contrast.mjs"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "jinhong",
+    "wzjh",
+    "industrial",
+    "llms-txt",
+    "ai",
+    "corporate-design",
+    "bilingual"
+  ],
+  "author": "Wenzhou Jinhong Electric Co., Ltd.",
+  "repository": { "type": "git", "url": "https://github.com/OWNER/wzjh-design-system" }
+}

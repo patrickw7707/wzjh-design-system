@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JINHONG Brand Book · Visual Brand Guidelines</title>
+  <meta name="description" content="JINHONG visual brand guidelines — logo, color, typography, voice, and component rules for Wenzhou Jinhong Electric Co., Ltd. (温州金宏电器有限公司)">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="tokens/wzjh-tokens.css">
+  <link rel="stylesheet" href="wzjh.css">
+  <style>
+    /* ── Page-local styles — all values reference tokens ──────────────────── */
+
+    /* Hero */
+    .bb-hero { padding-block: var(--wzjh-space-24) var(--wzjh-space-20); text-align: center; }
+    .bb-hero__mark { height: 5rem; margin-inline: auto; margin-bottom: var(--wzjh-space-6); filter: var(--wzjh-shadow-product); }
+    .bb-hero__wordmark { height: 2.25rem; margin-inline: auto; margin-top: var(--wzjh-space-6); margin-bottom: var(--wzjh-space-2); }
+    .bb-hero__rule { width: 3rem; height: 0; border: 0; border-top: var(--wzjh-border-strong) solid var(--wzjh-brand); margin: var(--wzjh-space-8) auto var(--wzjh-space-6); border-radius: var(--wzjh-radius-sm); }
+
+    /* Section structure */
+    .section-label { display: flex; align-items: baseline; gap: var(--wzjh-space-3); margin-bottom: var(--wzjh-space-8); }
+    .section-label h2 { margin: 0; }
+
+    /* Logo panels */
+    .logo-panels { display: grid; gap: var(--wzjh-space-6); }
+    @media (min-width: 48rem) { .logo-panels { grid-template-columns: repeat(3, 1fr); } }
+    .logo-panel { border-radius: var(--wzjh-radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--wzjh-space-12) var(--wzjh-space-8) var(--wzjh-space-6); min-height: 12rem; gap: var(--wzjh-space-4); }
+    .logo-panel--white { background: var(--wzjh-surface); border: 1px solid var(--wzjh-border-subtle); }
+    .logo-panel--subtle { background: var(--wzjh-surface-subtle); border: 1px solid var(--wzjh-border-subtle); }
+    .logo-panel--navy  { background: var(--wzjh-surface-inverse); border: 1px solid var(--wzjh-surface-inverse); }
+    .logo-panel img { max-height: 2.5rem; width: auto; }
+    .logo-panel__caption { font-size: var(--wzjh-size-caption); font-family: var(--wzjh-font-mono); color: var(--wzjh-text-muted); text-align: center; }
+    .logo-panel--navy .logo-panel__caption { color: var(--wzjh-footer-fg); }
+
+    /* Clear space */
+    .clearspace-zone { display: inline-block; padding: var(--wzjh-space-10); border: var(--wzjh-border-strong) dashed var(--wzjh-border); border-radius: var(--wzjh-radius-lg); background: var(--wzjh-surface); }
+    .clearspace-inner { padding: var(--wzjh-space-4) var(--wzjh-space-6); border: 1px solid var(--wzjh-border-subtle); border-radius: var(--wzjh-radius-sm); background: var(--wzjh-surface); }
+
+    /* Color swatches */
+    .swatch { border-radius: var(--wzjh-radius-lg); border: 1px solid var(--wzjh-border-subtle); overflow: hidden; }
+    .swatch__chip { height: 5rem; }
+    .swatch__meta { padding: var(--wzjh-space-3) var(--wzjh-space-4); }
+    .swatch__name { font-size: var(--wzjh-size-sm); font-weight: var(--wzjh-weight-bold); margin-bottom: var(--wzjh-space-1); }
+    .swatch__token { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); display: block; }
+    .swatch__hex   { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); display: block; }
+    .swatch__ratio { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); display: block; margin-top: var(--wzjh-space-1); }
+    .swatch__ratio--pass    { color: var(--wzjh-success); }
+    .swatch__ratio--fail    { color: var(--wzjh-text-muted); }
+    .swatch__ratio--partial { color: var(--wzjh-warning); }
+    .palette-group-label { font-size: var(--wzjh-size-sm); font-weight: var(--wzjh-weight-bold); color: var(--wzjh-text-secondary); text-transform: uppercase; letter-spacing: 0.08em; margin: var(--wzjh-space-10) 0 var(--wzjh-space-4); }
+    .palette-group-label:first-child { margin-top: 0; }
+
+    /* Color ramp strip */
+    .color-ramp { display: flex; border-radius: var(--wzjh-radius-lg); overflow: hidden; border: 1px solid var(--wzjh-border-subtle); margin-bottom: var(--wzjh-space-4); }
+    .color-ramp__step { flex: 1; min-width: 0; }
+    .color-ramp__chip { height: 2.5rem; }
+    .color-ramp__tag { padding: var(--wzjh-space-1) var(--wzjh-space-2); font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* Type scale rows */
+    .type-row { display: flex; align-items: baseline; gap: var(--wzjh-space-4); padding-block: var(--wzjh-space-4); border-bottom: 1px solid var(--wzjh-border-subtle); flex-wrap: wrap; }
+    .type-row:last-child { border-bottom: 0; }
+    .type-row .tag { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); min-width: 11rem; flex-shrink: 0; }
+    .font-stack-panel { background: var(--wzjh-surface-subtle); border: 1px solid var(--wzjh-border-subtle); border-radius: var(--wzjh-radius-lg); padding: var(--wzjh-space-6); margin-top: var(--wzjh-space-8); }
+    .font-stack-panel h4 { margin-bottom: var(--wzjh-space-3); }
+
+    /* Spacing table */
+    .token-table { width: 100%; border-collapse: collapse; font-size: var(--wzjh-size-sm); }
+    .token-table th, .token-table td { text-align: left; padding: var(--wzjh-space-3) var(--wzjh-space-4); border-bottom: 1px solid var(--wzjh-border-subtle); vertical-align: middle; }
+    .token-table th { background: var(--wzjh-surface-subtle); font-weight: var(--wzjh-weight-medium); color: var(--wzjh-text-secondary); width: 14rem; }
+    .token-table tr:last-child th, .token-table tr:last-child td { border-bottom: 0; }
+    .space-bar { height: var(--wzjh-space-4); background: var(--wzjh-brand); border-radius: var(--wzjh-radius-sm); display: block; }
+
+    /* Radius demo */
+    .radius-row { display: flex; flex-wrap: wrap; gap: var(--wzjh-space-8); align-items: flex-end; margin-top: var(--wzjh-space-6); }
+    .radius-item { display: flex; flex-direction: column; align-items: center; gap: var(--wzjh-space-3); }
+    .radius-box { width: 4.5rem; height: 4.5rem; background: var(--wzjh-blue-100); border: var(--wzjh-border-strong) solid var(--wzjh-brand); }
+    .radius-label { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); text-align: center; }
+
+    /* Shadow demo */
+    .shadow-row { display: flex; flex-wrap: wrap; gap: var(--wzjh-space-6); margin-top: var(--wzjh-space-6); }
+    .shadow-box { background: var(--wzjh-surface); padding: var(--wzjh-space-6) var(--wzjh-space-8); border-radius: var(--wzjh-radius-lg); text-align: center; min-width: 8rem; }
+    .shadow-box__label { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); margin-top: var(--wzjh-space-3); }
+
+    /* Motion table (reuses token-table) */
+
+    /* Voice principles */
+    .principles-grid { display: grid; gap: var(--wzjh-space-6); }
+    @media (min-width: 48rem) { .principles-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Unit chips */
+    .unit-strip { display: flex; flex-wrap: wrap; gap: var(--wzjh-space-3); margin-bottom: var(--wzjh-space-6); }
+    .unit-chip { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-sm); background: var(--wzjh-surface-subtle); border: 1px solid var(--wzjh-border); border-radius: var(--wzjh-radius); padding: 0.25rem 0.75rem; color: var(--wzjh-text); }
+
+    /* Bilingual glossary */
+    .glossary { width: 100%; border-collapse: collapse; font-size: var(--wzjh-size-sm); }
+    .glossary thead th { background: var(--wzjh-surface-inverse); color: var(--wzjh-white); font-weight: 700; letter-spacing: 0.04em; padding: var(--wzjh-space-3) var(--wzjh-space-4); text-align: left; }
+    .glossary tbody th, .glossary tbody td { text-align: left; padding: var(--wzjh-space-3) var(--wzjh-space-4); border-bottom: 1px solid var(--wzjh-border-subtle); vertical-align: top; }
+    .glossary tbody th { background: var(--wzjh-surface-subtle); font-weight: var(--wzjh-weight-medium); color: var(--wzjh-text-secondary); }
+    .glossary tbody tr:last-child th, .glossary tbody tr:last-child td { border-bottom: 0; }
+
+    /* DO/DON'T */
+    .do-dont { display: grid; gap: var(--wzjh-space-6); }
+    @media (min-width: 48rem) { .do-dont { grid-template-columns: 1fr 1fr; } }
+    .do-dont__heading { font-size: var(--wzjh-size-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--wzjh-space-4); }
+    .do-dont__heading--do   { color: var(--wzjh-success); }
+    .do-dont__heading--dont { color: var(--wzjh-danger); }
+    .do-dont__list { display: flex; flex-direction: column; gap: var(--wzjh-space-2); }
+    .do-dont__item { display: flex; gap: var(--wzjh-space-3); padding: var(--wzjh-space-3) var(--wzjh-space-4); border-radius: var(--wzjh-radius); font-size: var(--wzjh-size-sm); align-items: flex-start; }
+    .do-dont__item--do   { background: var(--wzjh-success-bg); }
+    .do-dont__item--dont { background: var(--wzjh-danger-bg); }
+    .do-dont__icon { font-weight: 700; flex-shrink: 0; line-height: var(--wzjh-lh-body); }
+    .do-dont__item--do   .do-dont__icon { color: var(--wzjh-success); }
+    .do-dont__item--dont .do-dont__icon { color: var(--wzjh-danger); }
+
+    /* Component preview frames */
+    .comp-frame { background: var(--wzjh-surface); border: 1px solid var(--wzjh-border-subtle); border-radius: var(--wzjh-radius-lg); padding: var(--wzjh-space-6); }
+    .comp-frame__label { font-size: var(--wzjh-size-caption); font-family: var(--wzjh-font-mono); color: var(--wzjh-text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--wzjh-space-4); display: block; }
+
+    /* AI steps — white cards sit on the dark section surface */
+    .ai-steps { display: grid; gap: var(--wzjh-space-6); }
+    @media (min-width: 48rem) { .ai-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 64rem) { .ai-steps { grid-template-columns: repeat(4, 1fr); } }
+    .ai-step { background: var(--wzjh-surface); border-radius: var(--wzjh-radius-lg); padding: var(--wzjh-space-6); border: 1px solid var(--wzjh-border-subtle); }
+    .ai-step__num { font-size: var(--wzjh-size-h1); font-weight: 700; color: var(--wzjh-action); line-height: var(--wzjh-lh-tight); margin-bottom: var(--wzjh-space-4); font-variant-numeric: tabular-nums; }
+    /* Override dark-section heading white for cards on white bg */
+    .wzjh-section--dark .ai-step h3 { color: var(--wzjh-text); }
+    .wzjh-section--dark .ai-step p  { color: var(--wzjh-text-secondary); }
+    .wzjh-section--dark .ai-step a  { color: var(--wzjh-action); }
+
+    /* Inline code */
+    code { font-family: var(--wzjh-font-mono); background: var(--wzjh-surface-subtle); border: 1px solid var(--wzjh-border-subtle); border-radius: var(--wzjh-radius-sm); padding: var(--wzjh-space-1) var(--wzjh-space-2); color: var(--wzjh-text); }
+
+    /* Min-size utility for logo spec boxes */
+    .spec-rule { display: flex; align-items: center; gap: var(--wzjh-space-4); padding: var(--wzjh-space-3) var(--wzjh-space-4); background: var(--wzjh-info-bg); border-radius: var(--wzjh-radius); border-left: 3px solid var(--wzjh-info); font-size: var(--wzjh-size-sm); margin-bottom: var(--wzjh-space-3); }
+    .spec-rule strong { color: var(--wzjh-text); font-weight: var(--wzjh-weight-bold); }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────────── -->
+<header class="wzjh-header">
+  <div class="wzjh-container wzjh-header__bar">
+    <a class="wzjh-header__logo" href="index.html" aria-label="JINHONG home">
+      <img src="assets/logo/wzjh-logo.svg" alt="JINHONG" width="200">
+    </a>
+    <nav class="wzjh-nav" aria-label="Primary">
+      <a href="index.html#colors">Colors</a>
+      <a href="index.html#type">Type</a>
+      <a href="index.html#components">Components</a>
+      <a href="index.html#patterns">Patterns</a>
+      <a href="brandbook.html" aria-current="page">Brand book</a>
+    </nav>
+    <a class="wzjh-btn wzjh-btn--primary wzjh-btn--sm" href="wzjh-design-system.md">Read the spec</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ── Hero ────────────────────────────────────────────────────────────────── -->
+<section class="wzjh-blueprint bb-hero">
+  <div class="wzjh-container">
+    <span class="wzjh-overline">Visual Brand Guidelines · <span lang="zh-CN">品牌视觉规范</span></span>
+    <img src="assets/logo/wzjh-mark.svg" alt="" aria-hidden="true" class="bb-hero__mark">
+    <h1 class="wzjh-display wzjh-display--fluid" style="margin-bottom:var(--wzjh-space-4)">JINHONG Brand Book</h1>
+    <p class="wzjh-lead" style="max-width:52ch;margin-inline:auto">
+      Every rule a designer, developer, or AI tool needs to ship on-brand work for
+      Wenzhou Jinhong Electric Co., Ltd. Color, typography, logo, voice, and components — all in one place.
+    </p>
+    <hr class="bb-hero__rule" aria-hidden="true">
+    <p class="wzjh-caption" lang="zh-CN" style="color:var(--wzjh-text-muted)">温州金宏电器有限公司 · 品牌手册 v1.0.0</p>
+    <div class="wzjh-cluster" style="justify-content:center;margin-top:var(--wzjh-space-6)">
+      <a class="wzjh-btn wzjh-btn--primary" href="wzjh-design-system.md">Master spec</a>
+      <a class="wzjh-btn wzjh-btn--secondary" href="FOR-AI.md">For AI tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── §01 Logo & Mark ─────────────────────────────────────────────────────── -->
+<section id="logo" class="wzjh-section">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline">01</span>
+      <h2>Logo &amp; Mark</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:62ch;margin-bottom:var(--wzjh-space-10)">
+      Three files. One logo file per surface. Never redraw, recolor, rotate, stretch, or AI-generate the logo — use the SVG.
+    </p>
+
+    <!-- Three logo panels -->
+    <div class="logo-panels">
+      <div class="logo-panel logo-panel--white">
+        <img src="assets/logo/wzjh-logo.svg" alt="JINHONG wordmark on white">
+        <span class="logo-panel__caption">wzjh-logo.svg<br>On white or <code>--wzjh-surface-subtle</code></span>
+      </div>
+      <div class="logo-panel logo-panel--navy">
+        <img src="assets/logo/wzjh-logo-white.svg" alt="JINHONG wordmark on navy">
+        <span class="logo-panel__caption">wzjh-logo-white.svg<br>On dark / <code>--wzjh-surface-inverse</code></span>
+      </div>
+      <div class="logo-panel logo-panel--subtle">
+        <img src="assets/logo/wzjh-mark.svg" alt="JINHONG mark" style="max-height:3.5rem">
+        <span class="logo-panel__caption">wzjh-mark.svg<br>Icon mark — favicons, avatars</span>
+      </div>
+    </div>
+
+    <!-- Placement rules -->
+    <div class="wzjh-grid wzjh-grid--2" style="margin-top:var(--wzjh-space-12)">
+
+      <!-- Clear space -->
+      <div>
+        <h3>Clear space</h3>
+        <p style="margin-bottom:var(--wzjh-space-6)">Maintain a minimum exclusion zone equal to the height of the "Z" on all four sides. The dashed boundary below shows the minimum zone at this size.</p>
+        <div class="clearspace-zone">
+          <div class="clearspace-inner">
+            <img src="assets/logo/wzjh-logo.svg" alt="JINHONG — clear space demonstration" style="height:2rem;width:auto">
+          </div>
+        </div>
+        <p class="wzjh-caption" style="margin-top:var(--wzjh-space-3)">Dashed boundary = minimum clear space. No type, rule, or graphic enters this zone.</p>
+      </div>
+
+      <!-- Size and surface rules -->
+      <div>
+        <h3>Size &amp; surface rules</h3>
+        <div class="wzjh-stack" style="margin-top:var(--wzjh-space-4)">
+          <div class="spec-rule">
+            <strong>Minimum width</strong>
+            <span>120px on screen (never smaller)</span>
+          </div>
+          <div class="spec-rule">
+            <strong>Approved backgrounds</strong>
+            <span>White, <code>--wzjh-surface-subtle</code>, <code>--wzjh-blue-900</code></span>
+          </div>
+          <div class="spec-rule">
+            <strong>White logo only on</strong>
+            <span>Dark surfaces and photography</span>
+          </div>
+          <div class="spec-rule">
+            <strong>File format</strong>
+            <span>Always use the provided SVG — not PNG, not a screenshot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DO/DON'T -->
+    <div style="margin-top:var(--wzjh-space-12)">
+      <h3 style="margin-bottom:var(--wzjh-space-6)">Logo usage rules</h3>
+      <div class="do-dont">
+        <div>
+          <div class="do-dont__heading do-dont__heading--do">Do</div>
+          <div class="do-dont__list">
+            <div class="do-dont__item do-dont__item--do"><span class="do-dont__icon">✓</span><span>Use the provided SVG files without modification</span></div>
+            <div class="do-dont__item do-dont__item--do"><span class="do-dont__icon">✓</span><span>Place on white, off-white, or navy backgrounds only</span></div>
+            <div class="do-dont__item do-dont__item--do"><span class="do-dont__icon">✓</span><span>Use <code>wzjh-logo-white.svg</code> on all dark surfaces</span></div>
+            <div class="do-dont__item do-dont__item--do"><span class="do-dont__icon">✓</span><span>Maintain clear space ≥ height of "Z" on all sides</span></div>
+            <div class="do-dont__item do-dont__item--do"><span class="do-dont__icon">✓</span><span>Scale proportionally — width minimum 120px</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="do-dont__heading do-dont__heading--dont">Never</div>
+          <div class="do-dont__list">
+            <div class="do-dont__item do-dont__item--dont"><span class="do-dont__icon">✗</span><span>Recolor any part of the logo or wordmark</span></div>
+            <div class="do-dont__item do-dont__item--dont"><span class="do-dont__icon">✗</span><span>Rotate, skew, stretch, or distort the logo</span></div>
+            <div class="do-dont__item do-dont__item--dont"><span class="do-dont__icon">✗</span><span>Add drop shadows, outlines, or glow effects</span></div>
+            <div class="do-dont__item do-dont__item--dont"><span class="do-dont__icon">✗</span><span>Redraw or AI-generate any version of the logo</span></div>
+            <div class="do-dont__item do-dont__item--dont"><span class="do-dont__icon">✗</span><span>Place on patterned, colorful, or low-contrast backgrounds</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── §02 Color ────────────────────────────────────────────────────────────── -->
+<section id="colors" class="wzjh-section wzjh-section--band">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline">02</span>
+      <h2>Color</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:62ch;margin-bottom:var(--wzjh-space-10)">
+      One blue ramp, one warm-neutral ramp, and four contrast-checked status colors. Reference tokens by name — never by hex value.
+    </p>
+
+    <!-- Brand blue rule alert -->
+    <div class="wzjh-alert wzjh-alert--info" style="margin-bottom:var(--wzjh-space-10)">
+      <div>
+        <strong>The single most important color rule:</strong>
+        The signature brand blue <code>#0BA1E2</code> (<code>--wzjh-blue-500</code>) is gorgeous as a fill, stroke, or logo — but at 2.91:1 contrast on white it is invisible-grade for text.
+        Any link, button label, or UI text in brand blue is a defect.
+        Use <code>var(--wzjh-action)</code> (<code>#0A6FB0</code>, 5.37:1) for all interactive elements and text.
+      </div>
+    </div>
+
+    <!-- Full blue ramp strip -->
+    <div class="palette-group-label" style="margin-top:0">Blue — brand ramp</div>
+    <div class="color-ramp" aria-label="Blue color ramp from 50 to 900">
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-50)"></div><div class="color-ramp__tag">50</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-100)"></div><div class="color-ramp__tag">100</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-200)"></div><div class="color-ramp__tag">200</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-300)"></div><div class="color-ramp__tag">300</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-400)"></div><div class="color-ramp__tag">400</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-500)"></div><div class="color-ramp__tag">500</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-600)"></div><div class="color-ramp__tag">600</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-700)"></div><div class="color-ramp__tag">700</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-800)"></div><div class="color-ramp__tag">800</div></div>
+      <div class="color-ramp__step"><div class="color-ramp__chip" style="background:var(--wzjh-blue-900)"></div><div class="color-ramp__tag">900</div></div>
+    </div>
+
+    <!-- Key semantic blues -->
+    <div class="wzjh-grid wzjh-grid--4" style="margin-bottom:var(--wzjh-space-4)">
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-50)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Tint · blue-50</div>
+          <code class="swatch__token">--wzjh-blue-50</code>
+          <code class="swatch__hex">#EAF6FC</code>
+          <span class="swatch__ratio swatch__ratio--fail">tint · fill only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-400)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Accent · blue-400</div>
+          <code class="swatch__token">--wzjh-accent</code>
+          <code class="swatch__hex">#35A3D9</code>
+          <span class="swatch__ratio swatch__ratio--fail">2.84:1 · decorative only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-500)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Brand · blue-500</div>
+          <code class="swatch__token">--wzjh-brand</code>
+          <code class="swatch__hex">#0BA1E2</code>
+          <span class="swatch__ratio swatch__ratio--fail">2.91:1 · decorative only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-600)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Hover fill · blue-600</div>
+          <code class="swatch__token">--wzjh-brand-strong</code>
+          <code class="swatch__hex">#0E86C0</code>
+          <span class="swatch__ratio swatch__ratio--partial">4.05:1 · large UI only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-700)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Action · blue-700</div>
+          <code class="swatch__token">--wzjh-action</code>
+          <code class="swatch__hex">#0A6FB0</code>
+          <span class="swatch__ratio swatch__ratio--pass">5.37:1 ✓ text-safe</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-800)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Action hover · blue-800</div>
+          <code class="swatch__token">--wzjh-action-hover</code>
+          <code class="swatch__hex">#0A5680</code>
+          <span class="swatch__ratio swatch__ratio--pass">7.91:1 ✓ text-safe</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-blue-900)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Navy · blue-900</div>
+          <code class="swatch__token">--wzjh-surface-inverse</code>
+          <code class="swatch__hex">#103D5B</code>
+          <span class="swatch__ratio swatch__ratio--pass">11.41:1 ✓ text-safe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ink & neutrals -->
+    <div class="palette-group-label">Ink &amp; neutrals</div>
+    <div class="wzjh-grid wzjh-grid--4">
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-ink-900)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Primary text</div>
+          <code class="swatch__token">--wzjh-text</code>
+          <code class="swatch__hex">#2F2725</code>
+          <span class="swatch__ratio swatch__ratio--pass">14.61:1 ✓ body text</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-neutral-700)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Secondary text</div>
+          <code class="swatch__token">--wzjh-text-secondary</code>
+          <code class="swatch__hex">#555555</code>
+          <span class="swatch__ratio swatch__ratio--pass">7.46:1 ✓ text-safe</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-neutral-600)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Muted text</div>
+          <code class="swatch__token">--wzjh-text-muted</code>
+          <code class="swatch__hex">#6B6B6B</code>
+          <span class="swatch__ratio swatch__ratio--pass">5.33:1 ✓ min for body</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-neutral-500)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Disabled / placeholder</div>
+          <code class="swatch__token">--wzjh-text-disabled</code>
+          <code class="swatch__hex">#898989</code>
+          <span class="swatch__ratio swatch__ratio--fail">3.50:1 · decorative only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-neutral-300);border-bottom:1px solid var(--wzjh-border-subtle)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Default border</div>
+          <code class="swatch__token">--wzjh-border</code>
+          <code class="swatch__hex">#DDDDDD</code>
+          <span class="swatch__ratio swatch__ratio--fail">fill · border only</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-neutral-50);border-bottom:1px solid var(--wzjh-border-subtle)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">Section band</div>
+          <code class="swatch__token">--wzjh-surface-subtle</code>
+          <code class="swatch__hex">#F7F7F7</code>
+          <span class="swatch__ratio swatch__ratio--fail">fill · background only</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status colors -->
+    <div class="palette-group-label">Status colors</div>
+    <div class="wzjh-grid wzjh-grid--4">
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-danger-bg)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name" style="color:var(--wzjh-danger)">Danger / E-stop</div>
+          <code class="swatch__token">--wzjh-danger</code>
+          <code class="swatch__hex">#A3201A</code>
+          <span class="swatch__ratio swatch__ratio--pass">7.56:1 ✓ errors, e-stop</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-success-bg)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name" style="color:var(--wzjh-success)">Success</div>
+          <code class="swatch__token">--wzjh-success</code>
+          <code class="swatch__hex">#157A41</code>
+          <span class="swatch__ratio swatch__ratio--pass">5.40:1 ✓ operational, pass</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-warning-bg)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name" style="color:var(--wzjh-warning)">Warning</div>
+          <code class="swatch__token">--wzjh-warning</code>
+          <code class="swatch__hex">#8A5200</code>
+          <span class="swatch__ratio swatch__ratio--pass">6.39:1 ✓ caution, limits</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__chip" style="background:var(--wzjh-info-bg)"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name" style="color:var(--wzjh-info)">Info</div>
+          <code class="swatch__token">--wzjh-info</code>
+          <code class="swatch__hex">#0A6FB0</code>
+          <span class="swatch__ratio swatch__ratio--pass">5.37:1 ✓ notes, tips</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── §03 Typography ───────────────────────────────────────────────────────── -->
+<section id="type" class="wzjh-section">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline">03</span>
+      <h2>Typography</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:62ch;margin-bottom:var(--wzjh-space-10)">
+      One typeface family. Ten sizes — no exceptions. The scale is closed: never invent a size outside it.
+    </p>
+
+    <!-- Type scale specimens -->
+    <div>
+      <div class="type-row">
+        <span class="tag">display-fluid · 40–64px · 700</span>
+        <span class="wzjh-display wzjh-display--fluid" style="margin:0">Precision control.</span>
+      </div>
+      <div class="type-row">
+        <span class="tag">display · 48px / 3rem · 700</span>
+        <span class="wzjh-display" style="margin:0">Industrial grade.</span>
+      </div>
+      <div class="type-row">
+        <span class="tag">h1 · 36px / 2.25rem · 700</span>
+        <h1 style="margin:0">Pushbutton switches</h1>
+      </div>
+      <div class="type-row">
+        <span class="tag">h2 · 30px / 1.875rem · 700</span>
+        <h2 style="margin:0">Indicator &amp; tower lights</h2>
+      </div>
+      <div class="type-row">
+        <span class="tag">h3 · 24px / 1.5rem · 700</span>
+        <h3 style="margin:0">Relays &amp; relay sockets</h3>
+      </div>
+      <div class="type-row">
+        <span class="tag">h4 · 20px / 1.25rem · 700</span>
+        <h4 style="margin:0">Wireless energy-harvesting switch</h4>
+      </div>
+      <div class="type-row">
+        <span class="tag">body-lg / lead · 18px · 400</span>
+        <p class="wzjh-lead" style="margin:0">Engineered for 1,000,000 mechanical operations under vibration and dust.</p>
+      </div>
+      <div class="type-row">
+        <span class="tag">body · 16px / 1rem · 400</span>
+        <p style="margin:0">Mid-to-high-end industrial control components for elevators, robotics, and CNC machining.</p>
+      </div>
+      <div class="type-row">
+        <span class="tag">small · 14px / 0.875rem · 400</span>
+        <span class="wzjh-small">Rated voltage: 24V–380V AC/DC · Protection: IP67 · Contact life: 1,000,000 ops</span>
+      </div>
+      <div class="type-row">
+        <span class="tag">caption · 12px / 0.75rem · 400</span>
+        <span class="wzjh-caption">JINHONG Design System v1.0.0 · © 2026 Wenzhou Jinhong Electric Co., Ltd.</span>
+      </div>
+      <div class="type-row">
+        <span class="tag">mono · spec values · 400</span>
+        <span class="wzjh-mono">Ø22mm · 24V–380V · 10A · IP67 · IK10 · 1NO+1NC · −25°C…+70°C</span>
+      </div>
+      <div class="type-row">
+        <span class="tag" lang="zh-CN">中文 · body · lang="zh-CN"</span>
+        <p lang="zh-CN" style="margin:0">专为高振动、多粉尘环境设计，机械寿命达 100 万次操作。适用于电梯、工业机器人及数控机床。</p>
+      </div>
+    </div>
+
+    <!-- Font stacks -->
+    <div class="wzjh-grid wzjh-grid--2" style="margin-top:var(--wzjh-space-10)">
+      <div class="font-stack-panel">
+        <h4>Sans-serif stack — <code>--wzjh-font-sans</code></h4>
+        <p class="wzjh-small wzjh-muted" style="margin:0">"zt_rol", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif</p>
+        <p class="wzjh-caption" style="margin-top:var(--wzjh-space-3)">zt_rol leads for brand owners with the licensed face. Every fallback is system or OFL — no web font loading needed.</p>
+      </div>
+      <div class="font-stack-panel">
+        <h4>Mono stack — <code>--wzjh-font-mono</code></h4>
+        <p class="wzjh-small wzjh-muted" style="margin:0">"SFMono-Regular", "JetBrains Mono", "Roboto Mono", Consolas, "Courier New", monospace</p>
+        <p class="wzjh-caption" style="margin-top:var(--wzjh-space-3)">Use for all specs, part numbers, parameters, and token names. Always pair with tabular-nums.</p>
+      </div>
+    </div>
+
+    <!-- CJK rules -->
+    <div class="wzjh-alert wzjh-alert--info" style="margin-top:var(--wzjh-space-8)">
+      <div>
+        <strong lang="zh-CN">中文排版规则</strong> — CJK typography rules:
+        (1) Mark all Simplified Chinese with <code>lang="zh-CN"</code> — tokens automatically apply CJK line-height (1.75) and zero letter-spacing.
+        (2) Never apply negative <code>letter-spacing</code> to Chinese text.
+        (3) Never <code>text-transform: uppercase</code> on Chinese.
+        (4) Never shrink Chinese to fit a box sized for English — resize the container.
+        (5) Containers must auto-size with flex/grid wrapping; no hardcoded heights on text blocks.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── §04 Spacing · Radius · Elevation · Motion ────────────────────────────── -->
+<section id="tokens" class="wzjh-section wzjh-section--band">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline">04</span>
+      <h2>Spacing · Radius · Elevation · Motion</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:62ch;margin-bottom:var(--wzjh-space-10)">
+      All spatial and temporal values come from tokens. The system is sharp, snappy, and industrial — restrained radii, subtle shadows, tactile motion.
+    </p>
+
+    <div class="wzjh-grid wzjh-grid--2">
+
+      <!-- Spacing scale -->
+      <div>
+        <h3>Spacing scale (4px base)</h3>
+        <div class="wzjh-table-wrap" style="margin-top:var(--wzjh-space-4)">
+          <table class="token-table">
+            <tbody>
+              <tr><th scope="row"><code>--wzjh-space-1</code></th><td>0.25rem · 4px<br><span class="space-bar" style="width:var(--wzjh-space-1)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-2</code></th><td>0.5rem · 8px<br><span class="space-bar" style="width:var(--wzjh-space-2)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-4</code></th><td>1rem · 16px<br><span class="space-bar" style="width:var(--wzjh-space-4)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-6</code></th><td>1.5rem · 24px<br><span class="space-bar" style="width:var(--wzjh-space-6)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-8</code></th><td>2rem · 32px<br><span class="space-bar" style="width:var(--wzjh-space-8)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-12</code></th><td>3rem · 48px<br><span class="space-bar" style="width:var(--wzjh-space-12)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-16</code></th><td>4rem · 64px<br><span class="space-bar" style="width:var(--wzjh-space-16)" aria-hidden="true"></span></td></tr>
+              <tr><th scope="row"><code>--wzjh-space-20</code></th><td>5rem · 80px<br><span class="space-bar" style="width:var(--wzjh-space-20)" aria-hidden="true"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Radius, shadow, motion -->
+      <div>
+        <h3>Border radius — sharp, industrial</h3>
+        <div class="radius-row" aria-label="Border radius scale demonstration">
+          <div class="radius-item">
+            <div class="radius-box" style="border-radius:var(--wzjh-radius-sm)" aria-label="2px radius"></div>
+            <div class="radius-label">radius-sm<br>2px · badges</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-box" style="border-radius:var(--wzjh-radius)" aria-label="4px radius"></div>
+            <div class="radius-label">radius<br>4px · buttons</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-box" style="border-radius:var(--wzjh-radius-lg)" aria-label="8px radius"></div>
+            <div class="radius-label">radius-lg<br>8px · cards</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-box" style="border-radius:var(--wzjh-radius-xl)" aria-label="12px radius"></div>
+            <div class="radius-label">radius-xl<br>12px · modals</div>
+          </div>
+        </div>
+        <p class="wzjh-caption" style="margin-top:var(--wzjh-space-4)">No pill-shaped buttons. <code>--wzjh-radius-pill</code> is reserved for status dots only.</p>
+
+        <h3 style="margin-top:var(--wzjh-space-8)">Elevation</h3>
+        <div class="shadow-row" aria-label="Shadow scale demonstration">
+          <div>
+            <div class="shadow-box" style="box-shadow:var(--wzjh-shadow-sm)"><span class="wzjh-caption wzjh-muted">sm</span></div>
+            <div class="shadow-box__label">shadow-sm</div>
+          </div>
+          <div>
+            <div class="shadow-box" style="box-shadow:var(--wzjh-shadow-card)"><span class="wzjh-caption wzjh-muted">card</span></div>
+            <div class="shadow-box__label">shadow-card</div>
+          </div>
+          <div>
+            <div class="shadow-box" style="box-shadow:var(--wzjh-shadow-hover)"><span class="wzjh-caption wzjh-muted">hover</span></div>
+            <div class="shadow-box__label">shadow-hover</div>
+          </div>
+          <div>
+            <div class="shadow-box" style="box-shadow:var(--wzjh-shadow-modal)"><span class="wzjh-caption wzjh-muted">modal</span></div>
+            <div class="shadow-box__label">shadow-modal</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:var(--wzjh-space-8)">Motion — snappy, mirrors hardware</h3>
+        <div class="wzjh-table-wrap" style="margin-top:var(--wzjh-space-4)">
+          <table class="token-table">
+            <tbody>
+              <tr><th scope="row"><code>--wzjh-duration-1</code></th><td class="wzjh-mono">120ms · micro: hover, press</td></tr>
+              <tr><th scope="row"><code>--wzjh-duration-2</code></th><td class="wzjh-mono">200ms · standard: reveals</td></tr>
+              <tr><th scope="row"><code>--wzjh-duration-3</code></th><td class="wzjh-mono">320ms · large: drawers</td></tr>
+              <tr><th scope="row"><code>--wzjh-ease</code></th><td class="wzjh-mono">cubic-bezier(.25,.8,.25,1)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="wzjh-caption" style="margin-top:var(--wzjh-space-3)">Buttons press with <code>transform: scale(0.97)</code> on <code>:active</code>. Honor <code>prefers-reduced-motion</code> — tokens zero durations automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── §05 Voice & Tone ─────────────────────────────────────────────────────── -->
+<section id="voice" class="wzjh-section">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline">05</span>
+      <h2>Voice &amp; Tone</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:62ch;margin-bottom:var(--wzjh-space-10)">
+      Authoritative. Precise. Plain. Lead with verifiable performance data — never with adjectives or exclamation marks.
+    </p>
+
+    <!-- Three tone principles -->
+    <div class="principles-grid" style="margin-bottom:var(--wzjh-space-12)">
+      <div class="wzjh-feature">
+        <h4>Authoritative</h4>
+        <p class="wzjh-small">State facts. Quote standards. Cite measurements. "Engineered for 1,000,000 mechanical operations" — not "incredibly durable."</p>
+      </div>
+      <div class="wzjh-feature">
+        <h4>Precise</h4>
+        <p class="wzjh-small">Use exact values, correct units, and defined abbreviations. Ambiguity in spec copy has direct operational consequences on the factory floor.</p>
+      </div>
+      <div class="wzjh-feature">
+        <h4>Plain</h4>
+        <p class="wzjh-small">No hype. No exclamation marks. No superlatives without supporting data. Write for an engineer who trusts evidence over enthusiasm.</p>
+      </div>
+    </div>
+
+    <!-- Unit formatting -->
+    <h3>Unit &amp; notation rules</h3>
+    <p class="wzjh-small" style="margin-bottom:var(--wzjh-space-4)">No spaces between value and unit. Exact casing. Use <code class="wzjh-mono">Ø</code> for diameter, not O or 0.</p>
+    <div class="unit-strip">
+      <span class="unit-chip">IP67</span>
+      <span class="unit-chip">IK10</span>
+      <span class="unit-chip">24V</span>
+      <span class="unit-chip">380V AC/DC</span>
+      <span class="unit-chip">10A</span>
+      <span class="unit-chip">Ø22mm</span>
+      <span class="unit-chip">−25°C…+70°C</span>
+      <span class="unit-chip">1NO+1NC</span>
+      <span class="unit-chip">1,000,000 ops</span>
+    </div>
+
+    <!-- Bilingual term glossary -->
+    <h3 style="margin-top:var(--wzjh-space-8)">Bilingual term glossary <span lang="zh-CN" class="wzjh-small wzjh-muted">标准术语对照表</span></h3>
+    <p class="wzjh-small" style="margin-bottom:var(--wzjh-space-4)">Use these exact terms in EN and <span lang="zh-CN">简体中文</span>. Consistency across languages is part of the JINHONG brand identity.</p>
+    <div class="wzjh-table-wrap">
+      <table class="glossary">
+        <thead>
+          <tr>
+            <th scope="col">English</th>
+            <th scope="col" lang="zh-CN">中文</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Emergency Stop</th>
+            <td lang="zh-CN">急停按钮</td>
+            <td>Always use danger styling — never decoration</td>
+          </tr>
+          <tr>
+            <th scope="row">Tower / Stack Light</th>
+            <td lang="zh-CN">信号灯塔 / 警示灯</td>
+            <td>Both terms are acceptable; use consistently within a document</td>
+          </tr>
+          <tr>
+            <th scope="row">Wireless (energy-harvesting) Switch</th>
+            <td lang="zh-CN">无源无线开关（自发电）</td>
+            <td>Include "energy-harvesting" / 自发电 parenthetical on first use</td>
+          </tr>
+          <tr>
+            <th scope="row">Vandal-resistant / Anti-vandal</th>
+            <td lang="zh-CN">防破坏 / 抗冲击</td>
+            <td>Pair with IK rating (e.g., IK10) for technical copy</td>
+          </tr>
+          <tr>
+            <th scope="row">Metal Pushbutton Switch</th>
+            <td lang="zh-CN">金属按钮开关</td>
+            <td>Specify mounting diameter: Ø22mm, Ø30mm</td>
+          </tr>
+          <tr>
+            <th scope="row">Relay &amp; Socket</th>
+            <td lang="zh-CN">继电器及底座</td>
+            <td>Always reference the matching socket model</td>
+          </tr>
+          <tr>
+            <th scope="row">Wenzhou Jinhong Electric Co., Ltd.</th>
+            <td lang="zh-CN">温州金宏电器有限公司</td>
+            <td>Full name on first use; "JINHONG" thereafter (all caps)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── §06 Components at a Glance ──────────────────────────────────────────── -->
+<section id="components" class="wzjh-section wzjh-section--band">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline">06</span>
+      <h2>Components at a Glance</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:62ch;margin-bottom:var(--wzjh-space-2)">
+      Key components built from tokens. Copy the markup from the master spec — never rebuild from scratch.
+      <a href="index.html#components">View full component gallery →</a>
+    </p>
+
+    <div class="wzjh-grid wzjh-grid--2" style="margin-top:var(--wzjh-space-10)">
+
+      <!-- Buttons -->
+      <div>
+        <div class="comp-frame">
+          <span class="comp-frame__label">Buttons — wzjh-btn</span>
+          <div class="wzjh-cluster">
+            <a class="wzjh-btn wzjh-btn--primary" href="index.html#components">Request a quote</a>
+            <a class="wzjh-btn wzjh-btn--secondary" href="index.html#components">Download datasheet</a>
+          </div>
+          <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-3)">
+            <button class="wzjh-btn wzjh-btn--danger" type="button">Emergency stop</button>
+            <button class="wzjh-btn wzjh-btn--ghost wzjh-btn--sm" type="button">Learn more</button>
+          </div>
+        </div>
+        <p class="wzjh-caption wzjh-muted" style="margin-top:var(--wzjh-space-3)">One primary action per region. Buttons are sharp (4px radius) — never pill-shaped. Primary = <code>--wzjh-action</code>. Danger = e-stop/destructive only.</p>
+      </div>
+
+      <!-- Badges & status -->
+      <div>
+        <div class="comp-frame">
+          <span class="comp-frame__label">Certification badges — wzjh-badge--cert</span>
+          <div class="wzjh-cluster">
+            <span class="wzjh-badge wzjh-badge--cert">CE</span>
+            <span class="wzjh-badge wzjh-badge--cert">UL</span>
+            <span class="wzjh-badge wzjh-badge--cert">RoHS</span>
+            <span class="wzjh-badge wzjh-badge--cert">CCC</span>
+            <span class="wzjh-badge wzjh-badge--cert">IP67</span>
+            <span class="wzjh-badge wzjh-badge--cert">IK10</span>
+          </div>
+          <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-4)">
+            <span class="wzjh-status wzjh-status--ok">In production</span>
+            <span class="wzjh-status wzjh-status--warn">Lead time 6 weeks</span>
+            <span class="wzjh-status wzjh-status--danger">Discontinued</span>
+          </div>
+        </div>
+        <p class="wzjh-caption wzjh-muted" style="margin-top:var(--wzjh-space-3)">Never display a certification the product does not actually hold. Status uses a dot AND a word — never color alone.</p>
+      </div>
+
+      <!-- Product card -->
+      <div>
+        <div class="comp-frame">
+          <span class="comp-frame__label">Product card — wzjh-card</span>
+          <article class="wzjh-card wzjh-card--interactive" style="max-width:18rem">
+            <div class="wzjh-card__media">
+              <img src="assets/logo/wzjh-mark.svg" alt="LA22 Ø22mm metal pushbutton switch" width="100">
+            </div>
+            <div class="wzjh-card__body">
+              <span class="wzjh-tag">Metal Pushbutton</span>
+              <h3 class="wzjh-card__title">LA22 Series · Ø22mm</h3>
+              <p class="wzjh-card__meta">Stainless steel · IP67 · 1NO+1NC · 24–380V</p>
+              <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-3)">
+                <span class="wzjh-status wzjh-status--ok">In production</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="wzjh-caption wzjh-muted" style="margin-top:var(--wzjh-space-3)">Product imagery: provided assets or neutral 4:3 placeholder. Never generate or redraw product photos.</p>
+      </div>
+
+      <!-- Spec table -->
+      <div>
+        <div class="comp-frame">
+          <span class="comp-frame__label">Spec table — wzjh-spec</span>
+          <div class="wzjh-table-wrap">
+            <table class="wzjh-spec">
+              <caption>LA22-11 — technical parameters</caption>
+              <tbody>
+                <tr><th scope="row">Mounting diameter</th><td>Ø22mm</td></tr>
+                <tr><th scope="row">Rated voltage</th><td>24V–380V AC/DC</td></tr>
+                <tr><th scope="row">Rated current</th><td>10A</td></tr>
+                <tr><th scope="row">Contact configuration</th><td>1NO + 1NC</td></tr>
+                <tr><th scope="row">Protection rating</th><td>IP67 · IK10</td></tr>
+                <tr><th scope="row">Mechanical life</th><td>1,000,000 operations</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="wzjh-caption wzjh-muted" style="margin-top:var(--wzjh-space-3)">Dense mono parameter rows. On mobile the table scrolls horizontally; the label column stays readable.</p>
+      </div>
+
+    </div>
+
+    <!-- Link to full gallery -->
+    <div style="text-align:center;margin-top:var(--wzjh-space-10)">
+      <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--lg" href="index.html#components">View full component gallery in the design system →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── §07 For AI Tools ─────────────────────────────────────────────────────── -->
+<section id="ai" class="wzjh-section wzjh-section--dark">
+  <div class="wzjh-container">
+    <div class="section-label">
+      <span class="wzjh-overline" style="color:var(--wzjh-blue-300)">07</span>
+      <h2>Building with AI tools</h2>
+    </div>
+    <p class="wzjh-lead" style="max-width:60ch;margin-bottom:var(--wzjh-space-10);color:var(--wzjh-text-on-inverse)">
+      Any AI tool — Claude, ChatGPT, Gemini, Cursor, v0, Copilot — can generate perfectly on-brand JINHONG pages and presentations. Follow four steps.
+    </p>
+
+    <div class="ai-steps">
+
+      <div class="ai-step">
+        <div class="ai-step__num" aria-hidden="true">01</div>
+        <h3>Load the spec</h3>
+        <p>Paste <a href="wzjh-design-system.md">wzjh-design-system.md</a> as context. This is the single source of truth: colors, type, spacing, components, and voice in one document.</p>
+      </div>
+
+      <div class="ai-step">
+        <div class="ai-step__num" aria-hidden="true">02</div>
+        <h3>Add the guardrails</h3>
+        <p>Also paste <a href="FOR-AI.md">FOR-AI.md</a>. It contains the strict generation rules and the 10-point self-check the AI must run before returning any output.</p>
+      </div>
+
+      <div class="ai-step">
+        <div class="ai-step__num" aria-hidden="true">03</div>
+        <h3>Link the stylesheets</h3>
+        <p>Link <code>tokens/wzjh-tokens.css</code> then <code>wzjh.css</code> — always in that order. Use <code>.wzjh-*</code> classes and <code>var(--wzjh-*)</code> tokens only. No hardcoded hex values.</p>
+      </div>
+
+      <div class="ai-step">
+        <div class="ai-step__num" aria-hidden="true">04</div>
+        <h3>Run the self-check</h3>
+        <p>Before accepting any output, run the 10-point self-check in <a href="FOR-AI.md">FOR-AI.md §9</a>. Every box must be checked. Reject and fix any unchecked item.</p>
+      </div>
+
+    </div>
+
+    <div class="wzjh-alert wzjh-alert--info" style="margin-top:var(--wzjh-space-10)">
+      <div>
+        <strong>Token machine format:</strong>
+        For Figma, Style Dictionary, or programmatic tooling, use
+        <a href="tokens/wzjh-tokens.json">tokens/wzjh-tokens.json</a> — it mirrors
+        <code>wzjh-tokens.css</code> 1:1 in W3C DTCG format.
+        For slide decks, add <a href="FOR-PRESENTATIONS.md">FOR-PRESENTATIONS.md</a> as additional context.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────────── -->
+<footer class="wzjh-footer">
+  <div class="wzjh-container wzjh-footer__grid">
+    <div>
+      <img src="assets/logo/wzjh-logo-white.svg" alt="JINHONG" style="height:2.5rem">
+      <p style="margin-top:var(--wzjh-space-4);max-width:30ch">Mid-to-high-end pushbutton switches, indicator lights, and industrial control components.</p>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">Metal Pushbutton</a></li>
+        <li><a href="#">Plastic Pushbutton</a></li>
+        <li><a href="#">Relay &amp; Sockets</a></li>
+        <li><a href="#">Tower Light</a></li>
+        <li><a href="#">Wireless Switch</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Technical Capabilities</a></li>
+        <li><a href="#">Download Center</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Design System</h4>
+      <ul class="wzjh-stack">
+        <li><a href="wzjh-design-system.md">Master spec</a></li>
+        <li><a href="brandbook.html" aria-current="page">Brand book</a></li>
+        <li><a href="FOR-AI.md">For AI tools</a></li>
+        <li><a href="https://www.wzjh.cc">www.wzjh.cc</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wzjh-container wzjh-footer__bottom">© 2026 Wenzhou Jinhong Electric Co., Ltd. (<span lang="zh-CN">温州金宏电器有限公司</span>) · All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>

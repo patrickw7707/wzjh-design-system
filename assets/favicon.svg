@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="JINHONG favicon">
+  <rect width="200" height="200" rx="28" fill="#FFFFFF"/>
+  <path d="M34 44 L166 44 L100 180 Z" fill="#EAF6FC"/>
+  <polyline points="54 64 80 128 100 90 120 128 146 64"
+            fill="none" stroke="#0BA1E2" stroke-width="20"
+            stroke-linejoin="miter" stroke-linecap="butt"/>
+  <circle cx="156" cy="58" r="10" fill="#0BA1E2"/>
+</svg>

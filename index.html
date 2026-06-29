@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JINHONG (WZJH) Design System</title>
+  <meta name="description" content="The token-driven, AI-consumable design system for Wenzhou Jinhong Electric Co., Ltd. Build stunning, on-brand websites and presentations.">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="tokens/wzjh-tokens.css">
+  <link rel="stylesheet" href="wzjh.css">
+  <style>
+    /* Page-local layout helpers (showcase only) — all values reference tokens */
+    .hero { position: relative; padding-block: var(--wzjh-space-24); }
+    .hero__grid { display: grid; gap: var(--wzjh-space-10); align-items: center; }
+    @media (min-width: 64rem) { .hero__grid { grid-template-columns: 1.1fr 0.9fr; } }
+    .hero__art { aspect-ratio: 4/3; border-radius: var(--wzjh-radius-xl); background:
+      radial-gradient(120% 120% at 80% 0%, var(--wzjh-blue-100), transparent 60%), var(--wzjh-surface);
+      border: 1px solid var(--wzjh-border-subtle); display: grid; place-items: center; overflow: hidden; }
+    .swatch { border-radius: var(--wzjh-radius-lg); border: 1px solid var(--wzjh-border-subtle); overflow: hidden; }
+    .swatch__chip { height: 5rem; }
+    .swatch__meta { padding: var(--wzjh-space-3) var(--wzjh-space-4); font-size: var(--wzjh-size-sm); }
+    .swatch__name { font-weight: var(--wzjh-weight-bold); }
+    .swatch__hex { font-family: var(--wzjh-font-mono); color: var(--wzjh-text-muted); }
+    .ratio { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); }
+    .type-row { display: flex; align-items: baseline; gap: var(--wzjh-space-4); padding-block: var(--wzjh-space-3); border-bottom: 1px solid var(--wzjh-border-subtle); }
+    .type-row .tag { font-family: var(--wzjh-font-mono); font-size: var(--wzjh-size-caption); color: var(--wzjh-text-muted); width: 9rem; flex: none; }
+    .section-label { display:flex; align-items:baseline; gap: var(--wzjh-space-3); margin-bottom: var(--wzjh-space-8); }
+    .section-label h2 { margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<header class="wzjh-header">
+  <div class="wzjh-container wzjh-header__bar">
+    <a class="wzjh-header__logo" href="#top" aria-label="JINHONG home">
+      <img src="assets/logo/wzjh-logo.svg" alt="JINHONG" width="200">
+    </a>
+    <nav class="wzjh-nav" aria-label="Primary">
+      <a href="#colors" aria-current="page">Colors</a>
+      <a href="#type">Type</a>
+      <a href="#components">Components</a>
+      <a href="#patterns">Patterns</a>
+      <a href="brandbook.html">Brand book</a>
+    </nav>
+    <a class="wzjh-btn wzjh-btn--primary wzjh-btn--sm" href="wzjh-design-system.md">Read the spec</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+  <section class="hero wzjh-blueprint">
+    <div class="wzjh-container hero__grid">
+      <div>
+        <span class="wzjh-overline">Design System · v1.0.0</span>
+        <h1 class="wzjh-display wzjh-display--fluid">The JINHONG corporate design, built for humans <em style="font-style:normal;color:var(--wzjh-action)">and</em> AI.</h1>
+        <p class="wzjh-lead">One token‑driven source of truth so any tool — or any teammate — can ship stunning, perfectly on‑brand websites and presentations for Wenzhou Jinhong Electric. WCAG‑AA verified. Bilingual EN&nbsp;/&nbsp;简体中文.</p>
+        <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-6)">
+          <a class="wzjh-btn wzjh-btn--primary wzjh-btn--lg" href="wzjh-design-system.md">Read the spec</a>
+          <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--lg" href="presentation/template.html">View the deck template</a>
+        </div>
+      </div>
+      <div class="hero__art">
+        <img src="assets/logo/wzjh-mark.svg" alt="" aria-hidden="true" width="240" style="filter:var(--wzjh-shadow-product)">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trust band ───────────────────────────────────────────────────────── -->
+  <section class="wzjh-section wzjh-section--tight wzjh-section--dark">
+    <div class="wzjh-container">
+      <div class="wzjh-grid wzjh-grid--4">
+        <div class="wzjh-stat"><div class="wzjh-stat__num">12</div><div class="wzjh-stat__label" style="color:var(--wzjh-text-on-inverse-muted)">Product families</div></div>
+        <div class="wzjh-stat"><div class="wzjh-stat__num">1,000,000</div><div class="wzjh-stat__label" style="color:var(--wzjh-text-on-inverse-muted)">Operations rated</div></div>
+        <div class="wzjh-stat"><div class="wzjh-stat__num">IP67</div><div class="wzjh-stat__label" style="color:var(--wzjh-text-on-inverse-muted)">Sealed to</div></div>
+        <div class="wzjh-stat"><div class="wzjh-stat__num">6</div><div class="wzjh-stat__label" style="color:var(--wzjh-text-on-inverse-muted)">Markets served</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Colors ───────────────────────────────────────────────────────────── -->
+  <section id="colors" class="wzjh-section">
+    <div class="wzjh-container">
+      <div class="section-label"><span class="wzjh-overline">01</span><h2>Color</h2></div>
+      <p class="wzjh-lead" style="max-width:60ch">One coherent blue ramp anchored on the signature brand blue, a warm neutral ramp, and contrast‑checked status colors. The brand blue is gorgeous — and decorative‑only.</p>
+
+      <div class="wzjh-grid wzjh-grid--4" style="margin-top:var(--wzjh-space-8)">
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-blue-500)"></div><div class="swatch__meta"><div class="swatch__name">Brand · blue‑500</div><div class="swatch__hex">#0BA1E2</div><div class="ratio wzjh-muted">decorative · 2.91:1</div></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-blue-400)"></div><div class="swatch__meta"><div class="swatch__name">Accent · blue‑400</div><div class="swatch__hex">#35A3D9</div><div class="ratio wzjh-muted">decorative · 2.84:1</div></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-action)"></div><div class="swatch__meta"><div class="swatch__name">Action · blue‑700</div><div class="swatch__hex">#0A6FB0</div><div class="ratio" style="color:var(--wzjh-success)">text/links · 5.37:1 ✓</div></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-blue-900)"></div><div class="swatch__meta"><div class="swatch__name">Navy · blue‑900</div><div class="swatch__hex">#103D5B</div><div class="ratio" style="color:var(--wzjh-success)">dark UI · 11.41:1 ✓</div></div></div>
+
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-ink-900)"></div><div class="swatch__meta"><div class="swatch__name">Ink · text</div><div class="swatch__hex">#2F2725</div><div class="ratio" style="color:var(--wzjh-success)">body · 14.61:1 ✓</div></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-danger)"></div><div class="swatch__meta"><div class="swatch__name">Danger</div><div class="swatch__hex">#A3201A</div><div class="ratio" style="color:var(--wzjh-success)">e‑stop · 7.56:1 ✓</div></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-success-solid)"></div><div class="swatch__meta"><div class="swatch__name">Success</div><div class="swatch__hex">#1E874B</div><div class="ratio" style="color:var(--wzjh-success)">4.54:1 ✓</div></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:var(--wzjh-warning-solid)"></div><div class="swatch__meta"><div class="swatch__name">Warning</div><div class="swatch__hex">#F5A623</div><div class="ratio wzjh-muted">chip · ink 7.21:1 ✓</div></div></div>
+      </div>
+
+      <div class="wzjh-alert wzjh-alert--info" style="margin-top:var(--wzjh-space-8)">
+        <div><strong>The rule:</strong> brand blue <code class="wzjh-mono">#0BA1E2</code> is for fills, logo, and large graphics. For any text, link, or button use <code class="wzjh-mono">var(--wzjh-action)</code>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Typography ───────────────────────────────────────────────────────── -->
+  <section id="type" class="wzjh-section wzjh-section--band">
+    <div class="wzjh-container">
+      <div class="section-label"><span class="wzjh-overline">02</span><h2>Typography</h2></div>
+      <div class="type-row"><span class="tag">display / 48</span><span class="wzjh-display" style="margin:0">Precision control</span></div>
+      <div class="type-row"><span class="tag">h1 / 36 · 700</span><h1 style="margin:0">Pushbutton switches</h1></div>
+      <div class="type-row"><span class="tag">h2 / 30 · 700</span><h2 style="margin:0">Indicator &amp; tower lights</h2></div>
+      <div class="type-row"><span class="tag">h3 / 24 · 700</span><h3 style="margin:0">Relays &amp; sockets</h3></div>
+      <div class="type-row"><span class="tag">body / 16</span><p style="margin:0">Engineered for 1,000,000 mechanical operations under vibration and dust.</p></div>
+      <div class="type-row"><span class="tag">zh‑CN / body</span><p lang="zh-CN" style="margin:0">专为高振动、多粉尘环境设计，机械寿命达 100 万次操作。</p></div>
+      <div class="type-row"><span class="tag">mono / spec</span><span class="wzjh-mono">Ø22mm · 24–380V · 10A · IP67 · 1NO+1NC</span></div>
+    </div>
+  </section>
+
+  <!-- ── Components ───────────────────────────────────────────────────────── -->
+  <section id="components" class="wzjh-section">
+    <div class="wzjh-container">
+      <div class="section-label"><span class="wzjh-overline">03</span><h2>Components</h2></div>
+
+      <h3>Buttons</h3>
+      <div class="wzjh-cluster" style="margin-bottom:var(--wzjh-space-10)">
+        <a class="wzjh-btn wzjh-btn--primary" href="#">Request a quote</a>
+        <a class="wzjh-btn wzjh-btn--secondary" href="#">Download datasheet</a>
+        <button class="wzjh-btn wzjh-btn--danger" type="button">Emergency stop</button>
+        <button class="wzjh-btn wzjh-btn--ghost" type="button">Learn more</button>
+        <button class="wzjh-btn wzjh-btn--primary" type="button" disabled>Disabled</button>
+      </div>
+
+      <h3>Product cards</h3>
+      <div class="wzjh-grid wzjh-grid--3" style="margin-bottom:var(--wzjh-space-10)">
+        <article class="wzjh-card wzjh-card--interactive">
+          <div class="wzjh-card__media"><img src="assets/logo/wzjh-mark.svg" alt="LA22 metal pushbutton" width="120"></div>
+          <div class="wzjh-card__body">
+            <span class="wzjh-tag">Metal Pushbutton</span>
+            <h3 class="wzjh-card__title">LA22 · Ø22mm</h3>
+            <p class="wzjh-card__meta">Stainless steel · IP67 · 1NO/1NC</p>
+            <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-3)"><span class="wzjh-status wzjh-status--ok">In production</span></div>
+          </div>
+        </article>
+        <article class="wzjh-card wzjh-card--interactive">
+          <div class="wzjh-card__media"><img src="assets/logo/wzjh-mark.svg" alt="Tower light" width="120"></div>
+          <div class="wzjh-card__body">
+            <span class="wzjh-tag">Tower Light</span>
+            <h3 class="wzjh-card__title">TL70 · 5‑tier</h3>
+            <p class="wzjh-card__meta">LED · 24V · buzzer option</p>
+            <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-3)"><span class="wzjh-status wzjh-status--warn">Lead time 6 weeks</span></div>
+          </div>
+        </article>
+        <article class="wzjh-card wzjh-card--interactive">
+          <div class="wzjh-card__media"><img src="assets/logo/wzjh-mark.svg" alt="Wireless switch" width="120"></div>
+          <div class="wzjh-card__body">
+            <span class="wzjh-tag">Wireless Switch</span>
+            <h3 class="wzjh-card__title">WS‑E · battery‑free</h3>
+            <p class="wzjh-card__meta">Energy‑harvesting · no wiring</p>
+            <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-3)"><span class="wzjh-status wzjh-status--ok">New</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="wzjh-grid wzjh-grid--2">
+        <div>
+          <h3>Spec table &amp; certifications</h3>
+          <div class="wzjh-cluster" style="margin-bottom:var(--wzjh-space-4)">
+            <span class="wzjh-badge wzjh-badge--cert">CE</span>
+            <span class="wzjh-badge wzjh-badge--cert">UL</span>
+            <span class="wzjh-badge wzjh-badge--cert">RoHS</span>
+            <span class="wzjh-badge wzjh-badge--cert">CCC</span>
+            <span class="wzjh-badge wzjh-badge--cert">IP67</span>
+            <span class="wzjh-badge wzjh-badge--cert">IK10</span>
+          </div>
+          <div class="wzjh-table-wrap">
+            <table class="wzjh-spec">
+              <caption>LA22‑11 — technical parameters</caption>
+              <tbody>
+                <tr><th scope="row">Mounting diameter</th><td>Ø22mm</td></tr>
+                <tr><th scope="row">Rated voltage</th><td>24V–380V AC/DC</td></tr>
+                <tr><th scope="row">Rated current</th><td>10A</td></tr>
+                <tr><th scope="row">Contact configuration</th><td>1NO + 1NC</td></tr>
+                <tr><th scope="row">Protection rating</th><td>IP67 · IK10</td></tr>
+                <tr><th scope="row">Mechanical life</th><td>1,000,000 operations</td></tr>
+                <tr><th scope="row">Operating temperature</th><td>−25°C … +70°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>RFQ form</h3>
+          <form novalidate>
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="model">Product / model <span class="wzjh-req">*</span></label>
+              <input class="wzjh-input" id="model" name="model" placeholder="e.g. LA22-11 Ø22mm" required>
+            </div>
+            <div class="wzjh-field">
+              <label class="wzjh-label" for="qty">Annual quantity</label>
+              <input class="wzjh-input" id="qty" name="qty" inputmode="numeric" placeholder="e.g. 5,000 pcs">
+              <p class="wzjh-help">Tell us your volume for tiered pricing.</p>
+            </div>
+            <button class="wzjh-btn wzjh-btn--primary" type="submit">Send request</button>
+          </form>
+
+          <h3 style="margin-top:var(--wzjh-space-8)">Alerts</h3>
+          <div class="wzjh-stack">
+            <div class="wzjh-alert wzjh-alert--success"><div><strong>Operational.</strong> Tested to 1,000,000 cycles.</div></div>
+            <div class="wzjh-alert wzjh-alert--warning"><div><strong>Caution.</strong> Torque the lock‑ring to spec.</div></div>
+            <div class="wzjh-alert wzjh-alert--danger"><div><strong>Danger.</strong> De‑energize before service.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Patterns / CTA ───────────────────────────────────────────────────── -->
+  <section id="patterns" class="wzjh-section wzjh-section--band">
+    <div class="wzjh-container" style="text-align:center">
+      <div class="section-label" style="justify-content:center"><span class="wzjh-overline">04</span><h2>See it in full pages</h2></div>
+      <p class="wzjh-lead" style="max-width:55ch;margin-inline:auto">Complete, on‑brand pages built entirely from these tokens and components.</p>
+      <div class="wzjh-cluster" style="justify-content:center;margin-top:var(--wzjh-space-6)">
+        <a class="wzjh-btn wzjh-btn--primary" href="examples/industrial-homepage.html">Homepage</a>
+        <a class="wzjh-btn wzjh-btn--secondary" href="examples/product-detail.html">Product detail</a>
+        <a class="wzjh-btn wzjh-btn--secondary" href="examples/rfq.html">RFQ page</a>
+        <a class="wzjh-btn wzjh-btn--secondary" href="presentation/template.html">Slide deck</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="wzjh-footer">
+  <div class="wzjh-container wzjh-footer__grid">
+    <div>
+      <img src="assets/logo/wzjh-logo-white.svg" alt="JINHONG" style="height:2.5rem">
+      <p style="margin-top:var(--wzjh-space-4);max-width:30ch">Mid‑to‑high‑end pushbutton switches, indicator lights, and industrial control components.</p>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">Metal Pushbutton</a></li>
+        <li><a href="#">Plastic Pushbutton</a></li>
+        <li><a href="#">Relay &amp; Sockets</a></li>
+        <li><a href="#">Tower Light</a></li>
+        <li><a href="#">Wireless Switch</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Technical Capabilities</a></li>
+        <li><a href="#">Download Center</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Design System</h4>
+      <ul class="wzjh-stack">
+        <li><a href="wzjh-design-system.md">Master spec</a></li>
+        <li><a href="brandbook.html">Brand book</a></li>
+        <li><a href="FOR-AI.md">For AI tools</a></li>
+        <li><a href="https://www.wzjh.cc">www.wzjh.cc</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wzjh-container wzjh-footer__bottom">© 2026 Wenzhou Jinhong Electric Co., Ltd. (温州金宏电器有限公司) · All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>

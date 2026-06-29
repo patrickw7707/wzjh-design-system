@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="JINHONG (ZJWZJH) brandmark">
+  <title>JINHONG / ZJWZJH brandmark</title>
+  <!-- Watermark: downward "V" triangle (industrial precision / signal) -->
+  <path d="M28 34 L172 34 L100 184 Z" fill="#EAECEE"/>
+  <!-- Dynamic blue "W" — motion + reliability -->
+  <polyline points="50 58 78 128 100 86 122 128 150 58"
+            fill="none" stroke="#0BA1E2" stroke-width="22"
+            stroke-linejoin="miter" stroke-linecap="butt"/>
+  <!-- Motion accent bars (speed / energy-harvesting) -->
+  <path d="M112 50 L150 50 L142 66 L104 66 Z" fill="#0BA1E2"/>
+  <!-- Indicator-light dot (signature pushbutton/indicator nod) -->
+  <circle cx="160" cy="50" r="11" fill="#0BA1E2"/>
+</svg>

@@ -1,0 +1,35 @@
+# JINHONG (WZJH) Design System
+
+> The official design system for Wenzhou Jinhong Electric Co., Ltd. (温州金宏电器有限公司,
+> brand JINHONG, wordmark ZJWZJH) — a mid‑to‑high‑end manufacturer of industrial electrical
+> control components (pushbutton switches, indicator & tower lights, relays, isolator
+> switches, fuse holders, foot switches, battery‑free wireless switches, enclosures).
+> Use these files to generate stunning, perfectly on‑brand websites and presentations.
+> Token‑driven, WCAG‑AA verified, bilingual EN + 简体中文. Light theme only.
+
+## Start here
+- [Master spec — wzjh-design-system.md](wzjh-design-system.md): the complete, copy‑paste‑ready specification. Read this first.
+- [Generation guardrails — FOR-AI.md](FOR-AI.md): strict rules + a self‑check to run against your output.
+
+## Tokens (source of truth)
+- [CSS variables — tokens/wzjh-tokens.css](tokens/wzjh-tokens.css): runtime tokens. Link this before any CSS.
+- [Component classes — wzjh.css](wzjh.css): ready `.wzjh-*` component library.
+- [DTCG JSON — tokens/wzjh-tokens.json](tokens/wzjh-tokens.json): machine‑readable tokens for Figma/Style Dictionary/generators.
+
+## Presentations
+- [Slide‑deck system — FOR-PRESENTATIONS.md](FOR-PRESENTATIONS.md): 16:9 deck rules, five slide layouts.
+- [Deck styles — presentation/deck.css](presentation/deck.css) and [template — presentation/template.html](presentation/template.html).
+
+## See it
+- [Showcase — index.html](index.html): live component & pattern gallery (GitHub Pages entry).
+- [Brand book — brandbook.html](brandbook.html): visual brand guidelines.
+- [Examples — examples/](examples/): full example pages (homepage, product, RFQ) and a slide.
+
+## Key rules (cheat sheet)
+- Brand blue #0BA1E2 is decorative only (2.91:1). Use --wzjh-action (#0A6FB0) for text/links/buttons.
+- Body text --wzjh-text (#2F2725). Danger red #A3201A only for e‑stop/errors.
+- One font stack (var(--wzjh-font-sans)); type scale only; rem units; sharp corners; no dark mode.
+- Never invent tokens, fonts, product photos, logos, or certifications.
+
+## License & assets
+- [LICENSE](LICENSE): code + tokens are MIT; the "JINHONG"/"ZJWZJH" trademarks, logo, and the proprietary "zt_rol" font are excluded — see file.

@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LA22 Series Ø22mm Metal Pushbutton Switch — JINHONG</title>
+  <meta name="description" content="LA22 Series Ø22mm metal pushbutton switch by JINHONG. IP67, IK10, stainless steel body, 24–380V AC/DC, rated to 1,000,000 mechanical operations. CE, UL, RoHS, CCC certified.">
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../tokens/wzjh-tokens.css">
+  <link rel="stylesheet" href="../wzjh.css">
+  <style>
+    /* ── Product detail · page-local helpers ── all values reference tokens ── */
+
+    /* Breadcrumb strip */
+    .pd-crumb-strip {
+      padding-block: var(--wzjh-space-4);
+      border-bottom: var(--wzjh-border-width) solid var(--wzjh-border-subtle);
+      background: var(--wzjh-surface);
+    }
+
+    /* Product hero */
+    .pd-hero { padding-block: var(--wzjh-space-12); }
+    .pd-hero__grid {
+      display: grid;
+      gap: var(--wzjh-space-10);
+      align-items: start;
+    }
+    @media (min-width: 64rem) {
+      .pd-hero__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Gallery — main image + thumbnail row */
+    .pd-gallery { display: flex; flex-direction: column; gap: var(--wzjh-space-3); }
+    .pd-gallery__main {
+      aspect-ratio: 4 / 3;
+      background: var(--wzjh-surface);
+      border: var(--wzjh-border-width) solid var(--wzjh-border-subtle);
+      border-radius: var(--wzjh-radius-xl);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: var(--wzjh-space-10);
+    }
+    .pd-gallery__main img {
+      max-height: 16rem;
+      width: auto;
+      filter: var(--wzjh-shadow-product);
+    }
+    .pd-gallery__thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--wzjh-space-2);
+    }
+    .pd-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--wzjh-space-1);
+      min-height: var(--wzjh-touch-min);
+      padding: var(--wzjh-space-3);
+      background: var(--wzjh-surface-subtle);
+      border: var(--wzjh-border-width) solid var(--wzjh-border-subtle);
+      border-radius: var(--wzjh-radius-lg);
+      cursor: pointer;
+      transition: border-color var(--wzjh-duration-1) var(--wzjh-ease),
+                  background var(--wzjh-duration-1) var(--wzjh-ease);
+    }
+    .pd-thumb:hover { border-color: var(--wzjh-action); background: var(--wzjh-surface); }
+    .pd-thumb--active {
+      border-color: var(--wzjh-action);
+      border-width: var(--wzjh-border-strong);
+      background: var(--wzjh-surface);
+    }
+    .pd-thumb img { max-width: 80%; height: auto; filter: var(--wzjh-shadow-product); }
+    .pd-thumb__label {
+      font-size: var(--wzjh-size-caption);
+      font-family: var(--wzjh-font-mono);
+      color: var(--wzjh-text-muted);
+      text-align: center;
+    }
+
+    /* RFQ panel */
+    .pd-panel { display: flex; flex-direction: column; gap: var(--wzjh-space-5); }
+    .pd-panel__meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--wzjh-space-3);
+    }
+    .pd-partnumber {
+      font-family: var(--wzjh-font-mono);
+      font-size: var(--wzjh-size-sm);
+      font-weight: var(--wzjh-weight-medium);
+      color: var(--wzjh-text-muted);
+      background: var(--wzjh-surface-subtle);
+      border: var(--wzjh-border-width) solid var(--wzjh-border);
+      border-radius: var(--wzjh-radius);
+      padding: var(--wzjh-space-1) var(--wzjh-space-2);
+    }
+    .pd-panel__name-group { margin: 0; }
+    .pd-panel__title { margin-bottom: var(--wzjh-space-2); }
+    .pd-panel__subtitle {
+      font-size: var(--wzjh-size-h4);
+      font-weight: var(--wzjh-weight-regular);
+      color: var(--wzjh-text-secondary);
+      margin: 0;
+    }
+    .pd-panel__desc {
+      font-size: var(--wzjh-size-body);
+      color: var(--wzjh-text-secondary);
+      margin: 0;
+    }
+    .pd-divider {
+      height: var(--wzjh-border-width);
+      background: var(--wzjh-border-subtle);
+      border: 0;
+      margin: 0;
+    }
+    /* Key specs list */
+    .pd-keyspecs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--wzjh-space-2);
+    }
+    .pd-keyspecs li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--wzjh-space-3);
+      font-size: var(--wzjh-size-sm);
+      padding-bottom: var(--wzjh-space-2);
+      border-bottom: var(--wzjh-border-width) solid var(--wzjh-border-subtle);
+    }
+    .pd-keyspecs li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .pd-keyspecs__label {
+      color: var(--wzjh-text-muted);
+      flex: none;
+      width: 10rem;
+    }
+    .pd-keyspecs__value {
+      font-family: var(--wzjh-font-mono);
+      color: var(--wzjh-text);
+      font-weight: var(--wzjh-weight-medium);
+    }
+    .pd-panel__actions { display: flex; flex-wrap: wrap; gap: var(--wzjh-space-3); }
+
+    /* Full spec table — group header rows */
+    .pd-spec-group th {
+      background: var(--wzjh-blue-50);
+      color: var(--wzjh-action);
+      font-size: var(--wzjh-size-caption);
+      font-weight: var(--wzjh-weight-bold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding-block: var(--wzjh-space-2);
+    }
+
+    /* Downloads grid */
+    .pd-downloads {
+      display: grid;
+      gap: var(--wzjh-space-5);
+    }
+    @media (min-width: 48rem) { .pd-downloads { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 64rem) { .pd-downloads { grid-template-columns: repeat(4, 1fr); } }
+    .pd-doc-card {
+      background: var(--wzjh-surface);
+      border: var(--wzjh-border-width) solid var(--wzjh-border-subtle);
+      border-top: var(--wzjh-border-strong) solid var(--wzjh-border-subtle);
+      border-radius: var(--wzjh-radius-lg);
+      padding: var(--wzjh-space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--wzjh-space-3);
+      transition: box-shadow var(--wzjh-duration-2) var(--wzjh-ease),
+                  transform var(--wzjh-duration-2) var(--wzjh-ease);
+    }
+    .pd-doc-card:hover { box-shadow: var(--wzjh-shadow-hover); transform: translateY(-2px); }
+    .pd-doc-card--primary { border-top-color: var(--wzjh-action); }
+    .pd-doc-type {
+      font-family: var(--wzjh-font-mono);
+      font-size: var(--wzjh-size-caption);
+      font-weight: var(--wzjh-weight-bold);
+      color: var(--wzjh-action);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pd-doc-name {
+      font-size: var(--wzjh-size-sm);
+      font-weight: var(--wzjh-weight-bold);
+      color: var(--wzjh-text);
+      margin: 0 0 var(--wzjh-space-1);
+    }
+    .pd-doc-meta {
+      font-size: var(--wzjh-size-caption);
+      color: var(--wzjh-text-muted);
+      font-family: var(--wzjh-font-mono);
+      margin: 0;
+    }
+    .pd-doc-desc {
+      font-size: var(--wzjh-size-caption);
+      color: var(--wzjh-text-muted);
+      margin: 0;
+      flex-grow: 1;
+    }
+    .pd-doc-card__footer { margin-top: var(--wzjh-space-2); }
+    .pd-doc-links { display: flex; flex-wrap: wrap; gap: var(--wzjh-space-2); }
+
+    /* Head type variant cards */
+    .pd-variant-grid {
+      display: grid;
+      gap: var(--wzjh-space-4);
+    }
+    @media (min-width: 48rem)  { .pd-variant-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 64rem)  { .pd-variant-grid { grid-template-columns: repeat(4, 1fr); } }
+    .pd-variant-card {
+      background: var(--wzjh-surface);
+      border: var(--wzjh-border-width) solid var(--wzjh-border-subtle);
+      border-radius: var(--wzjh-radius-lg);
+      padding: var(--wzjh-space-5);
+    }
+    .pd-variant-card__pn {
+      font-family: var(--wzjh-font-mono);
+      font-size: var(--wzjh-size-caption);
+      font-weight: var(--wzjh-weight-bold);
+      color: var(--wzjh-action);
+      margin-bottom: var(--wzjh-space-2);
+    }
+    .pd-variant-card__type {
+      font-size: var(--wzjh-size-body);
+      font-weight: var(--wzjh-weight-bold);
+      color: var(--wzjh-text);
+      margin-bottom: var(--wzjh-space-3);
+    }
+    .pd-variant-specs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--wzjh-space-1);
+    }
+    .pd-variant-specs li {
+      font-size: var(--wzjh-size-caption);
+      color: var(--wzjh-text-muted);
+      font-family: var(--wzjh-font-mono);
+    }
+
+    /* CTA band */
+    .pd-cta { text-align: center; }
+    .pd-cta h2 { margin-bottom: var(--wzjh-space-3); }
+    .pd-cta p {
+      max-width: 52ch;
+      margin-inline: auto;
+      margin-bottom: var(--wzjh-space-6);
+      color: var(--wzjh-footer-fg);
+    }
+
+    /* Secondary button on dark surface */
+    .wzjh-section--dark .wzjh-btn--secondary {
+      color: var(--wzjh-white);
+      border-color: var(--wzjh-white);
+    }
+    .wzjh-section--dark .wzjh-btn--secondary:hover {
+      background: var(--wzjh-white);
+      color: var(--wzjh-blue-900);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<header class="wzjh-header">
+  <div class="wzjh-container wzjh-header__bar">
+    <a class="wzjh-header__logo" href="../index.html" aria-label="JINHONG home">
+      <img src="../assets/logo/wzjh-logo.svg" alt="JINHONG" width="200">
+    </a>
+    <nav class="wzjh-nav" aria-label="Primary">
+      <a href="../examples/industrial-homepage.html" class="is-active" aria-current="page">Products</a>
+      <a href="#">Technical Capabilities</a>
+      <a href="#">About Us</a>
+      <a href="#">Download Center</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a class="wzjh-btn wzjh-btn--primary wzjh-btn--sm" href="#rfq-cta">Request a quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ── Breadcrumb ─────────────────────────────────────────────────────────── -->
+<div class="pd-crumb-strip">
+  <div class="wzjh-container">
+    <nav aria-label="Breadcrumb">
+      <ol class="wzjh-breadcrumb">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../examples/industrial-homepage.html">Products</a></li>
+        <li><a href="#">Metal Pushbutton</a></li>
+        <li aria-current="page">LA22 Series</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- ── Product hero ───────────────────────────────────────────────────────── -->
+<section class="pd-hero">
+  <div class="wzjh-container pd-hero__grid">
+
+    <!-- LEFT: Product gallery -->
+    <div class="pd-gallery" aria-label="Product gallery">
+      <div class="pd-gallery__main">
+        <img src="../assets/logo/wzjh-mark.svg"
+             alt="LA22 Series Ø22mm metal pushbutton switch — JINHONG mark (stand-in)"
+             width="260">
+      </div>
+      <div class="pd-gallery__thumbs" role="list" aria-label="Gallery thumbnails">
+        <button class="pd-thumb pd-thumb--active" type="button"
+                aria-label="View front" aria-pressed="true" role="listitem">
+          <img src="../assets/logo/wzjh-mark.svg" alt="Front view">
+          <span class="pd-thumb__label">Front</span>
+        </button>
+        <button class="pd-thumb" type="button"
+                aria-label="View side profile" aria-pressed="false" role="listitem">
+          <img src="../assets/logo/wzjh-mark.svg" alt="Side profile view">
+          <span class="pd-thumb__label">Side</span>
+        </button>
+        <button class="pd-thumb" type="button"
+                aria-label="View panel cutout dimension diagram" aria-pressed="false" role="listitem">
+          <img src="../assets/logo/wzjh-mark.svg" alt="Panel cutout dimension diagram">
+          <span class="pd-thumb__label">Cutout</span>
+        </button>
+        <button class="pd-thumb" type="button"
+                aria-label="View wiring diagram" aria-pressed="false" role="listitem">
+          <img src="../assets/logo/wzjh-mark.svg" alt="Wiring diagram">
+          <span class="pd-thumb__label">Wiring</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: RFQ panel -->
+    <div class="pd-panel">
+
+      <div>
+        <span class="wzjh-tag">Metal Pushbutton Switch</span>
+      </div>
+
+      <div class="pd-panel__meta-row">
+        <code class="pd-partnumber">LA22</code>
+        <span class="wzjh-status wzjh-status--ok">In production</span>
+      </div>
+
+      <div class="pd-panel__name-group">
+        <h1 class="pd-panel__title">LA22 Series Ø22mm Metal Pushbutton Switch</h1>
+        <p class="pd-panel__subtitle" lang="zh-CN">LA22系列 Ø22mm 金属按钮开关</p>
+      </div>
+
+      <p class="pd-panel__desc">Vandal-resistant Ø22mm pushbutton with stainless steel or zinc alloy body. Rated to 1,000,000 mechanical operations and sealed to IP67. Impact-rated IK10 for demanding environments including elevators, industrial robotics, petrochemical, and CNC machining.</p>
+
+      <hr class="pd-divider">
+
+      <!-- Certifications -->
+      <div>
+        <span class="wzjh-overline">Certifications &amp; ratings</span>
+        <div class="wzjh-cluster">
+          <span class="wzjh-badge wzjh-badge--cert">CE</span>
+          <span class="wzjh-badge wzjh-badge--cert">UL</span>
+          <span class="wzjh-badge wzjh-badge--cert">RoHS</span>
+          <span class="wzjh-badge wzjh-badge--cert">CCC</span>
+          <span class="wzjh-badge wzjh-badge--cert">IP67</span>
+          <span class="wzjh-badge wzjh-badge--cert">IK10</span>
+        </div>
+      </div>
+
+      <hr class="pd-divider">
+
+      <!-- Key specs summary -->
+      <div>
+        <span class="wzjh-overline">Key parameters</span>
+        <ul class="pd-keyspecs">
+          <li>
+            <span class="pd-keyspecs__label">Mounting diameter</span>
+            <span class="pd-keyspecs__value">Ø22mm</span>
+          </li>
+          <li>
+            <span class="pd-keyspecs__label">Rated voltage</span>
+            <span class="pd-keyspecs__value">24V–380V AC/DC</span>
+          </li>
+          <li>
+            <span class="pd-keyspecs__label">Rated current</span>
+            <span class="pd-keyspecs__value">10A</span>
+          </li>
+          <li>
+            <span class="pd-keyspecs__label">Contact config</span>
+            <span class="pd-keyspecs__value">1NO · 1NC · 1NO+1NC · 2NO+2NC</span>
+          </li>
+          <li>
+            <span class="pd-keyspecs__label">Mechanical life</span>
+            <span class="pd-keyspecs__value">1,000,000 operations</span>
+          </li>
+          <li>
+            <span class="pd-keyspecs__label">Protection</span>
+            <span class="pd-keyspecs__value">IP67 · IK10</span>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="pd-divider">
+
+      <div class="pd-panel__actions">
+        <a class="wzjh-btn wzjh-btn--primary wzjh-btn--lg" href="#rfq-cta">Request a quote</a>
+        <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--lg" href="#downloads">Download datasheet</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Full specification table ───────────────────────────────────────────── -->
+<section class="wzjh-section wzjh-section--tight wzjh-section--band" id="specifications">
+  <div class="wzjh-container">
+    <span class="wzjh-overline">Technical data</span>
+    <h2>Full Specification</h2>
+    <p style="font-size: var(--wzjh-size-sm); color: var(--wzjh-text-muted); margin-bottom: var(--wzjh-space-6)">
+      <span lang="zh-CN">完整技术规格</span>
+      &nbsp;·&nbsp; Values apply to standard stainless steel body unless noted.
+    </p>
+
+    <div class="wzjh-table-wrap">
+      <table class="wzjh-spec">
+        <caption>LA22 Series — complete technical parameters</caption>
+        <tbody>
+
+          <!-- Group: Mechanical -->
+          <tr class="pd-spec-group">
+            <th colspan="2" scope="rowgroup">Mechanical</th>
+          </tr>
+          <tr>
+            <th scope="row">Mounting diameter</th>
+            <td>Ø22mm</td>
+          </tr>
+          <tr>
+            <th scope="row">Panel cutout tolerance</th>
+            <td>Ø22mm +0.1/−0 mm</td>
+          </tr>
+          <tr>
+            <th scope="row">Panel thickness (max)</th>
+            <td>5mm</td>
+          </tr>
+          <tr>
+            <th scope="row">Body material</th>
+            <td>Stainless steel (standard) · Zinc alloy (option)</td>
+          </tr>
+          <tr>
+            <th scope="row">Actuator head types</th>
+            <td>Flush · Extended · Mushroom Ø40mm · Illuminated (LED)</td>
+          </tr>
+          <tr>
+            <th scope="row">Operating force</th>
+            <td>2.5N–5.5N (varies by head type)</td>
+          </tr>
+          <tr>
+            <th scope="row">Pre-travel</th>
+            <td>4mm ±1mm</td>
+          </tr>
+          <tr>
+            <th scope="row">Over-travel</th>
+            <td>1.5mm (min)</td>
+          </tr>
+          <tr>
+            <th scope="row">Terminal type</th>
+            <td>Screw terminal (standard) · Solder lug (option)</td>
+          </tr>
+          <tr>
+            <th scope="row">Wire cross-section</th>
+            <td>0.5mm² – 2.5mm²</td>
+          </tr>
+          <tr>
+            <th scope="row">Impact resistance</th>
+            <td>IK10 (20J) — IEC 62262</td>
+          </tr>
+
+          <!-- Group: Electrical -->
+          <tr class="pd-spec-group">
+            <th colspan="2" scope="rowgroup">Electrical</th>
+          </tr>
+          <tr>
+            <th scope="row">Rated voltage (AC)</th>
+            <td>24V–380V AC (50/60 Hz)</td>
+          </tr>
+          <tr>
+            <th scope="row">Rated voltage (DC)</th>
+            <td>24V–250V DC</td>
+          </tr>
+          <tr>
+            <th scope="row">Rated current</th>
+            <td>10A at 24V DC · 6A at 230V AC</td>
+          </tr>
+          <tr>
+            <th scope="row">Insulation voltage</th>
+            <td>660V</td>
+          </tr>
+          <tr>
+            <th scope="row">Contact resistance (initial)</th>
+            <td>≤ 50 mΩ</td>
+          </tr>
+          <tr>
+            <th scope="row">Contact configuration</th>
+            <td>1NO · 1NC · 1NO+1NC · 2NO+2NC (specify on order)</td>
+          </tr>
+          <tr>
+            <th scope="row">Contact bounce</th>
+            <td>≤ 5ms</td>
+          </tr>
+          <tr>
+            <th scope="row">Indicator voltage (illuminated)</th>
+            <td>24V AC/DC · 110V AC · 220V AC</td>
+          </tr>
+          <tr>
+            <th scope="row">Indicator lamp type</th>
+            <td>LED (illuminated variant only)</td>
+          </tr>
+          <tr>
+            <th scope="row">Indicator power</th>
+            <td>≤ 1.2W</td>
+          </tr>
+
+          <!-- Group: Environmental -->
+          <tr class="pd-spec-group">
+            <th colspan="2" scope="rowgroup">Environmental &amp; Protection</th>
+          </tr>
+          <tr>
+            <th scope="row">Ingress protection</th>
+            <td>IP67 — dust-tight · immersion 1m/30 min (IEC 60529)</td>
+          </tr>
+          <tr>
+            <th scope="row">Operating temperature</th>
+            <td>−25°C … +70°C</td>
+          </tr>
+          <tr>
+            <th scope="row">Storage temperature</th>
+            <td>−40°C … +85°C</td>
+          </tr>
+          <tr>
+            <th scope="row">Relative humidity</th>
+            <td>≤ 85% RH (non-condensing)</td>
+          </tr>
+          <tr>
+            <th scope="row">Vibration resistance</th>
+            <td>10–55 Hz · 1mm amplitude — IEC 60068-2-6</td>
+          </tr>
+          <tr>
+            <th scope="row">Corrosion resistance</th>
+            <td>Salt-spray 48h (stainless steel body)</td>
+          </tr>
+
+          <!-- Group: Lifecycle -->
+          <tr class="pd-spec-group">
+            <th colspan="2" scope="rowgroup">Lifecycle &amp; Reliability</th>
+          </tr>
+          <tr>
+            <th scope="row">Mechanical life</th>
+            <td>1,000,000 operations</td>
+          </tr>
+          <tr>
+            <th scope="row">Electrical life</th>
+            <td>100,000 operations (at rated load)</td>
+          </tr>
+          <tr>
+            <th scope="row">Dielectric strength</th>
+            <td>2,000V AC / 1 min (between contacts)</td>
+          </tr>
+
+          <!-- Group: Certifications & Standards -->
+          <tr class="pd-spec-group">
+            <th colspan="2" scope="rowgroup">Certifications &amp; Standards</th>
+          </tr>
+          <tr>
+            <th scope="row">Certifications held</th>
+            <td>CE · UL · RoHS · CCC</td>
+          </tr>
+          <tr>
+            <th scope="row">Standards</th>
+            <td>IEC 60947-5-1 · EN 60947-5-1 · GB 14048.5</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Downloads ──────────────────────────────────────────────────────────── -->
+<section class="wzjh-section wzjh-section--tight" id="downloads">
+  <div class="wzjh-container">
+    <span class="wzjh-overline">Technical documents</span>
+    <h2>Downloads</h2>
+    <p class="wzjh-lead" style="max-width: 55ch; margin-bottom: var(--wzjh-space-8)">All documents current as of 2024-Q4. Contact the JINHONG team if you require a language not shown.</p>
+
+    <div class="pd-downloads">
+
+      <!-- Datasheet PDF -->
+      <div class="pd-doc-card pd-doc-card--primary">
+        <div class="pd-doc-type">PDF</div>
+        <div>
+          <p class="pd-doc-name">LA22 Series Datasheet</p>
+          <p class="pd-doc-meta">LA22-DS-EN-v3.2.pdf · 1.4 MB</p>
+        </div>
+        <p class="pd-doc-desc">Complete product specification, dimensions, wiring diagrams, and ordering guide. Available in English and 简体中文.</p>
+        <div class="pd-doc-card__footer">
+          <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--sm"
+             href="#" aria-label="Download LA22 Series datasheet PDF (1.4 MB)">Download</a>
+        </div>
+      </div>
+
+      <!-- 2D / 3D CAD -->
+      <div class="pd-doc-card">
+        <div class="pd-doc-type">DWG / STP</div>
+        <div>
+          <p class="pd-doc-name">2D &amp; 3D CAD Files</p>
+          <p class="pd-doc-meta">LA22-CAD-Pack.zip · 2.5 MB</p>
+        </div>
+        <p class="pd-doc-desc">AutoCAD DWG, DXF (2D) and STEP AP214 (3D) for all head types. Includes panel cutout template.</p>
+        <div class="pd-doc-card__footer pd-doc-links">
+          <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--sm"
+             href="#" aria-label="Download LA22 2D CAD drawing (DWG/DXF)">DWG</a>
+          <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--sm"
+             href="#" aria-label="Download LA22 3D CAD model (STEP)">STEP</a>
+        </div>
+      </div>
+
+      <!-- Wiring diagram -->
+      <div class="pd-doc-card">
+        <div class="pd-doc-type">PDF</div>
+        <div>
+          <p class="pd-doc-name">Wiring Diagram</p>
+          <p class="pd-doc-meta">LA22-Wiring-EN.pdf · 340 KB</p>
+        </div>
+        <p class="pd-doc-desc">Contact block wiring schematics for 1NO, 1NC, 1NO+1NC, and 2NO+2NC configurations. Illuminated variant included.</p>
+        <div class="pd-doc-card__footer">
+          <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--sm"
+             href="#" aria-label="Download LA22 wiring diagram PDF (340 KB)">Download</a>
+        </div>
+      </div>
+
+      <!-- CE Declaration of Conformity -->
+      <div class="pd-doc-card">
+        <div class="pd-doc-type">PDF</div>
+        <div>
+          <p class="pd-doc-name">CE Declaration of Conformity</p>
+          <p class="pd-doc-meta">LA22-CE-DoC-2024.pdf · 220 KB</p>
+        </div>
+        <p class="pd-doc-desc">EU Declaration of Conformity covering LVD Directive 2014/35/EU and RoHS Directive 2011/65/EU. Valid to 2027-12-31.</p>
+        <div class="pd-doc-card__footer">
+          <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--sm"
+             href="#" aria-label="Download LA22 CE Declaration of Conformity PDF (220 KB)">Download</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Head type variants & ordering guide ────────────────────────────────── -->
+<section class="wzjh-section wzjh-section--tight wzjh-section--band" id="variants">
+  <div class="wzjh-container">
+    <span class="wzjh-overline">Ordering guide</span>
+    <h2>Head Type Variants</h2>
+    <p class="wzjh-lead" style="max-width: 60ch; margin-bottom: var(--wzjh-space-8)">All variants share the same Ø22mm panel cutout, IP67 body, and modular contact block system. Specify head type, contact configuration, and body material when ordering.</p>
+
+    <div class="pd-variant-grid">
+
+      <!-- Flush head -->
+      <div class="pd-variant-card">
+        <div class="pd-variant-card__pn">LA22-10 / LA22-01 / LA22-11</div>
+        <div class="pd-variant-card__type">Flush Head</div>
+        <ul class="pd-variant-specs">
+          <li>Profile: flush with guard ring</li>
+          <li>Force: 2.5N–3.5N</li>
+          <li>Contacts: 1NO · 1NC · 1NO+1NC</li>
+          <li>Use: general control panels, accidental-actuation protection</li>
+        </ul>
+      </div>
+
+      <!-- Extended head -->
+      <div class="pd-variant-card">
+        <div class="pd-variant-card__pn">LA22-20 / LA22-02 / LA22-21</div>
+        <div class="pd-variant-card__type">Extended Head</div>
+        <ul class="pd-variant-specs">
+          <li>Profile: raised 8mm above panel</li>
+          <li>Force: 2.5N–3.5N</li>
+          <li>Contacts: 1NO · 1NC · 1NO+1NC</li>
+          <li>Use: high-frequency stations, gloved operation</li>
+        </ul>
+      </div>
+
+      <!-- Mushroom head -->
+      <div class="pd-variant-card">
+        <div class="pd-variant-card__pn">LA22-31 / LA22-32</div>
+        <div class="pd-variant-card__type">Mushroom Head Ø40mm</div>
+        <ul class="pd-variant-specs">
+          <li>Profile: Ø40mm cap, palm-operated</li>
+          <li>Force: 4.0N–5.5N</li>
+          <li>Contacts: 1NO+1NC · 2NO+2NC</li>
+          <li>Use: cycle-start, emergency-adjacent controls</li>
+        </ul>
+      </div>
+
+      <!-- Illuminated head -->
+      <div class="pd-variant-card">
+        <div class="pd-variant-card__pn">LA22-41 / LA22-42</div>
+        <div class="pd-variant-card__type">Illuminated (LED)</div>
+        <ul class="pd-variant-specs">
+          <li>Profile: flush with integrated LED lens</li>
+          <li>Indicator: 24V · 110V · 220V AC/DC</li>
+          <li>Colors: Red · Green · Yellow · Blue · White</li>
+          <li>Use: status-feedback, selector indication</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="wzjh-alert wzjh-alert--info" style="margin-top: var(--wzjh-space-8)">
+      <div>
+        <strong>Custom configurations available.</strong>
+        Body color, legend engraving, cable-entry termination, and explosion-proof (Ex) variants are available on request.
+        Contact the JINHONG engineering team with your application parameters.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Related products ───────────────────────────────────────────────────── -->
+<section class="wzjh-section wzjh-section--tight" id="related">
+  <div class="wzjh-container">
+    <span class="wzjh-overline">You may also need</span>
+    <h2>Related Products</h2>
+    <div class="wzjh-grid wzjh-grid--3" style="margin-top: var(--wzjh-space-6)">
+
+      <article class="wzjh-card wzjh-card--interactive">
+        <div class="wzjh-card__media">
+          <img src="../assets/logo/wzjh-mark.svg"
+               alt="LA38 Series Ø38mm heavy-duty metal pushbutton switch" width="120">
+        </div>
+        <div class="wzjh-card__body">
+          <span class="wzjh-tag">Metal Pushbutton</span>
+          <h3 class="wzjh-card__title">LA38 Series · Ø38mm</h3>
+          <p class="wzjh-card__meta">Stainless steel · IP67 · heavy-duty · 24–380V</p>
+          <div class="wzjh-cluster" style="margin-top: var(--wzjh-space-3); justify-content: space-between;">
+            <span class="wzjh-status wzjh-status--ok">In production</span>
+            <a class="wzjh-btn wzjh-btn--ghost wzjh-btn--sm" href="#">View specs</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wzjh-card wzjh-card--interactive">
+        <div class="wzjh-card__media">
+          <img src="../assets/logo/wzjh-mark.svg"
+               alt="TL70 Series 5-tier LED tower light" width="120">
+        </div>
+        <div class="wzjh-card__body">
+          <span class="wzjh-tag">Tower Light</span>
+          <h3 class="wzjh-card__title">TL70 Series · 5-tier</h3>
+          <p class="wzjh-card__meta">LED · 24V · IP54 · buzzer option · Ø70mm</p>
+          <div class="wzjh-cluster" style="margin-top: var(--wzjh-space-3); justify-content: space-between;">
+            <span class="wzjh-status wzjh-status--warn">Lead time 6 weeks</span>
+            <a class="wzjh-btn wzjh-btn--ghost wzjh-btn--sm" href="#">View specs</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wzjh-card wzjh-card--interactive">
+        <div class="wzjh-card__media">
+          <img src="../assets/logo/wzjh-mark.svg"
+               alt="RJ45 Series DIN rail interface relay and socket" width="120">
+        </div>
+        <div class="wzjh-card__body">
+          <span class="wzjh-tag">Relay &amp; Socket</span>
+          <h3 class="wzjh-card__title">RJ45 Series · Interface relay</h3>
+          <p class="wzjh-card__meta">24V DC · 8A · 2CO · plug-in socket · DIN rail</p>
+          <div class="wzjh-cluster" style="margin-top: var(--wzjh-space-3); justify-content: space-between;">
+            <span class="wzjh-status wzjh-status--ok">In production</span>
+            <a class="wzjh-btn wzjh-btn--ghost wzjh-btn--sm" href="#">View specs</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA band ────────────────────────────────────────────────────────────── -->
+<section class="wzjh-section wzjh-section--dark" id="rfq-cta">
+  <div class="wzjh-container pd-cta">
+    <span class="wzjh-overline" style="color: var(--wzjh-blue-300)">Get a quote</span>
+    <h2>Ready to specify the LA22 Series</h2>
+    <p>Send your quantity, rated voltage, contact configuration, and application details. The JINHONG engineering team will confirm availability, lead time, and pricing within one business day.</p>
+    <div class="wzjh-cluster" style="justify-content: center;">
+      <a class="wzjh-btn wzjh-btn--primary wzjh-btn--lg" href="#">Request a quote</a>
+      <a class="wzjh-btn wzjh-btn--secondary wzjh-btn--lg" href="../examples/industrial-homepage.html">View all products</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer class="wzjh-footer">
+  <div class="wzjh-container wzjh-footer__grid">
+    <div>
+      <img src="../assets/logo/wzjh-logo-white.svg" alt="JINHONG" style="height:2.5rem">
+      <p style="margin-top: var(--wzjh-space-4); max-width: 28ch">Mid-to-high-end pushbutton switches, indicator lights, and industrial control components.</p>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">Metal Pushbutton</a></li>
+        <li><a href="#">Plastic Pushbutton</a></li>
+        <li><a href="#">Relay &amp; Sockets</a></li>
+        <li><a href="#">Tower Light</a></li>
+        <li><a href="#">Wireless Switch</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul class="wzjh-stack">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Technical Capabilities</a></li>
+        <li><a href="#">Download Center</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="wzjh-stack">
+        <li>Wenzhou, Zhejiang, China</li>
+        <li><a href="https://www.wzjh.cc">www.wzjh.cc</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wzjh-container wzjh-footer__bottom">© 2026 Wenzhou Jinhong Electric Co., Ltd. (温州金宏电器有限公司) · All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>

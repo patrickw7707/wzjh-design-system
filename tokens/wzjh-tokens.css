@@ -1,0 +1,296 @@
+/* ============================================================================
+   JINHONG (WZJH) Design System — Design Tokens
+   Wenzhou Jinhong Electric Co., Ltd.  ·  https://www.wzjh.cc
+   ----------------------------------------------------------------------------
+   Version : 1.0.0
+   Source  : This file is the runtime source of truth. tokens/wzjh-tokens.json
+             mirrors it 1:1 in W3C DTCG format for tooling (Figma, Style
+             Dictionary, generators). Keep the two in sync.
+   Base    : 16px = 1rem.  Prefix: --wzjh-*
+   Usage   : <link rel="stylesheet" href="tokens/wzjh-tokens.css">
+             then write: color: var(--wzjh-text); background: var(--wzjh-surface);
+   ----------------------------------------------------------------------------
+   ACCESSIBILITY ANCHOR (verified, WCAG 2.2):
+     - Brand blue #0BA1E2 = 2.91:1 on white  -> DECORATIVE / FILLS / LOGO ONLY.
+       Never use it for body text, links, or small UI labels on white.
+     - Action blue #0A6FB0 = 5.37:1 on white -> the only blue for text/links.
+     - Ink #2F2725 = 14.61:1, secondary #555 = 7.46:1 -> body/secondary text.
+   ============================================================================ */
+
+:root {
+
+  /* ════════════════════════════════════════════════════════════════════════
+     LAYER 1 — PRIMITIVES  (raw values; never reference directly in components)
+     ════════════════════════════════════════════════════════════════════════ */
+
+  /* ── Blue (brand) — one coherent ramp ─────────────────────────────────────
+     50–300  tints/fills · 400 accent · 500 BRAND · 600–900 accessible darks  */
+  --wzjh-blue-50:  #EAF6FC;   /* subtle brand-tinted band / selected row        */
+  --wzjh-blue-100: #CFEAF8;   /* light fill, hover background, info box          */
+  --wzjh-blue-200: #A6D9F1;   /* chips, soft dividers on blue surfaces          */
+  --wzjh-blue-300: #5FC0EA;   /* decorative, gradients, illustration            */
+  --wzjh-blue-400: #35A3D9;   /* ACCENT (authentic secondary) — decorative only */
+  --wzjh-blue-500: #0BA1E2;   /* BRAND — logo, large fills, icon strokes        */
+  --wzjh-blue-600: #0E86C0;   /* hover for 500 fills; large-text/UI (4.05:1)    */
+  --wzjh-blue-700: #0A6FB0;   /* ACTION — links, buttons, small text (5.37:1)   */
+  --wzjh-blue-800: #0A5680;   /* action hover / high-contrast text (7.91:1)     */
+  --wzjh-blue-900: #103D5B;   /* navy — dark surfaces, deep headings (11.41:1)  */
+
+  /* ── Ink + warm neutral ramp (tuned to the warm charcoal ink) ──────────── */
+  --wzjh-white:      #FFFFFF;
+  --wzjh-neutral-50: #F7F7F7;  /* page section band                            */
+  --wzjh-neutral-100:#F3F3F4;  /* alternate band, card fill                    */
+  --wzjh-neutral-150:#EEEEEE;  /* hairline / light border                      */
+  --wzjh-neutral-200:#E2E2E2;  /* dividers                                     */
+  --wzjh-neutral-300:#DDDDDD;  /* DEFAULT border (inputs, cards)               */
+  --wzjh-neutral-400:#C4C4C4;  /* strong border, disabled outline             */
+  --wzjh-neutral-500:#898989;  /* placeholder / disabled / decorative (3.5:1) */
+  --wzjh-neutral-600:#6B6B6B;  /* muted text (5.33:1) — min for body          */
+  --wzjh-neutral-700:#555555;  /* secondary text (7.46:1)                      */
+  --wzjh-neutral-800:#3A3330;  /* strong text                                  */
+  --wzjh-ink-900:    #2F2725;  /* PRIMARY TEXT — warm charcoal (14.61:1)       */
+
+  /* ── Red (industrial / danger — authentic e-stop red) ──────────────────── */
+  --wzjh-red-50:  #FBEAE9;     /* danger background                            */
+  --wzjh-red-500: #C8392F;     /* bright signal red (decorative/large)         */
+  --wzjh-red-700: #A3201A;     /* DANGER — text, badges, e-stop (7.56:1)       */
+  --wzjh-red-900: #7A1813;     /* danger hover (10.67:1)                       */
+
+  /* ── Green (success / operational) ─────────────────────────────────────── */
+  --wzjh-green-50:  #E7F4ED;
+  --wzjh-green-600: #1E874B;   /* success fill, white text passes (4.54:1)     */
+  --wzjh-green-700: #157A41;   /* success text (5.40:1)                        */
+  --wzjh-green-800: #0F5E32;   /* success hover / text on tint (7.87:1)        */
+
+  /* ── Amber (warning / caution) ─────────────────────────────────────────── */
+  --wzjh-amber-50:  #FCF3E2;
+  --wzjh-amber-fill:#F5A623;   /* warning chip fill — pair with ink (7.21:1)   */
+  --wzjh-amber-600: #B26A00;   /* warning text (4.24:1, large/UI)              */
+  --wzjh-amber-700: #8A5200;   /* warning text small (6.39:1)                  */
+
+  /* ── Typography primitives ─────────────────────────────────────────────── */
+  /* Default face is license-clean: ships nowhere proprietary. The brand face
+     "zt_rol" leads the stack for the brand owner who has it licensed; every
+     fallback is a system or OFL font, so generated sites need no @font-face. */
+  --wzjh-font-sans: "zt_rol", "Helvetica Neue", Helvetica, Arial,
+                    "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --wzjh-font-cjk:  "PingFang SC", "Microsoft YaHei", "Noto Sans SC",
+                    "Hiragino Sans GB", sans-serif;
+  --wzjh-font-mono: "SFMono-Regular", "JetBrains Mono", "Roboto Mono",
+                    Consolas, "Courier New", monospace;
+
+  --wzjh-weight-regular: 400;
+  --wzjh-weight-medium:  500;
+  --wzjh-weight-bold:    700;
+
+  /* Modular type scale (rem). Closed set — do not invent sizes. */
+  --wzjh-size-caption: 0.75rem;   /* 12px */
+  --wzjh-size-sm:      0.875rem;  /* 14px */
+  --wzjh-size-body:    1rem;      /* 16px */
+  --wzjh-size-lg:      1.125rem;  /* 18px */
+  --wzjh-size-h4:      1.25rem;   /* 20px */
+  --wzjh-size-h3:      1.5rem;    /* 24px */
+  --wzjh-size-h2:      1.875rem;  /* 30px */
+  --wzjh-size-h1:      2.25rem;   /* 36px */
+  --wzjh-size-display: 3rem;      /* 48px */
+  --wzjh-size-display-fluid: clamp(2.5rem, 1.5rem + 4vw, 4rem); /* hero 40-64 */
+
+  --wzjh-lh-tight:   1.15;   /* display / large headings (Latin)               */
+  --wzjh-lh-heading: 1.3;    /* h1–h4                                          */
+  --wzjh-lh-body:    1.6;    /* body copy                                      */
+  --wzjh-lh-cjk:     1.75;   /* Simplified-Chinese body (denser glyphs)        */
+
+  /* ── Spacing scale (4px base) ──────────────────────────────────────────── */
+  --wzjh-space-1:  0.25rem;  /*  4px */
+  --wzjh-space-2:  0.5rem;   /*  8px */
+  --wzjh-space-3:  0.75rem;  /* 12px */
+  --wzjh-space-4:  1rem;     /* 16px */
+  --wzjh-space-5:  1.25rem;  /* 20px */
+  --wzjh-space-6:  1.5rem;   /* 24px */
+  --wzjh-space-8:  2rem;     /* 32px */
+  --wzjh-space-10: 2.5rem;   /* 40px */
+  --wzjh-space-12: 3rem;     /* 48px */
+  --wzjh-space-16: 4rem;     /* 64px */
+  --wzjh-space-20: 5rem;     /* 80px */
+  --wzjh-space-24: 6rem;     /* 96px */
+
+  /* ── Radius (sharp / industrial — restrained) ──────────────────────────── */
+  --wzjh-radius-sm:   0.125rem; /* 2px  — badges, tags                          */
+  --wzjh-radius:      0.25rem;  /* 4px  — buttons, inputs, chips (DEFAULT)      */
+  --wzjh-radius-lg:   0.5rem;   /* 8px  — cards, panels                         */
+  --wzjh-radius-xl:   0.75rem;  /* 12px — modals, large media                   */
+  --wzjh-radius-pill: 9999px;   /* pills (use sparingly — status only)         */
+
+  /* ── Elevation (subtle; industrial restraint) ──────────────────────────── */
+  --wzjh-shadow-sm:    0 1px 2px rgba(47, 39, 37, 0.06);
+  --wzjh-shadow-card:  0 2px 8px rgba(47, 39, 37, 0.08);
+  --wzjh-shadow-hover: 0 6px 20px rgba(47, 39, 37, 0.12);
+  --wzjh-shadow-modal: 0 20px 60px rgba(47, 39, 37, 0.22), 0 4px 16px rgba(47, 39, 37, 0.10);
+  --wzjh-shadow-product: drop-shadow(0 10px 20px rgba(47, 39, 37, 0.10)); /* product-on-white */
+
+  /* ── Borders ───────────────────────────────────────────────────────────── */
+  --wzjh-border-width: 1px;
+  --wzjh-border-strong: 2px;
+
+  /* ── Motion (snappy / tactile, mirrors hardware) ───────────────────────── */
+  --wzjh-ease:        cubic-bezier(0.25, 0.8, 0.25, 1);
+  --wzjh-duration-1:  120ms;  /* micro: hover, press                           */
+  --wzjh-duration-2:  200ms;  /* standard: reveals, accordions                 */
+  --wzjh-duration-3:  320ms;  /* large: drawers, slide transitions             */
+
+  /* ── Layout ────────────────────────────────────────────────────────────── */
+  --wzjh-container:   80rem;  /* 1280px — max content width                    */
+  --wzjh-container-narrow: 48rem; /* 768px — long-form / forms                 */
+  --wzjh-gutter:      1.5rem; /* container side padding (mobile)               */
+  --wzjh-gutter-lg:   2.5rem; /* container side padding (desktop)              */
+  --wzjh-touch-min:   2.75rem;/* 44px minimum hit target (48px preferred)      */
+
+  /* Breakpoints (for reference in docs; media queries below) */
+  --wzjh-bp-sm: 30rem;  /* 480px  */
+  --wzjh-bp-md: 48rem;  /* 768px  */
+  --wzjh-bp-lg: 64rem;  /* 1024px */
+  --wzjh-bp-xl: 80rem;  /* 1280px */
+
+
+  /* ════════════════════════════════════════════════════════════════════════
+     LAYER 2 — SEMANTIC ALIASES  (use THESE in components, not primitives)
+     ════════════════════════════════════════════════════════════════════════ */
+
+  /* Brand / accent */
+  --wzjh-brand:          var(--wzjh-blue-500);  /* identity — fills/logo/graphics */
+  --wzjh-brand-strong:   var(--wzjh-blue-600);
+  --wzjh-accent:         var(--wzjh-blue-400);  /* decorative accent only         */
+
+  /* Action / interactive (contrast-safe) */
+  --wzjh-action:         var(--wzjh-blue-700);  /* links, primary buttons         */
+  --wzjh-action-hover:   var(--wzjh-blue-800);
+  --wzjh-action-subtle:  var(--wzjh-blue-50);   /* tinted button/hover background  */
+  --wzjh-focus-ring:     var(--wzjh-blue-700);
+
+  /* Text */
+  --wzjh-text:           var(--wzjh-ink-900);   /* primary body / headings        */
+  --wzjh-text-secondary: var(--wzjh-neutral-700);
+  --wzjh-text-muted:     var(--wzjh-neutral-600);
+  --wzjh-text-disabled:  var(--wzjh-neutral-500);
+  --wzjh-text-on-brand:  var(--wzjh-white);     /* text on action/brand fills     */
+  --wzjh-text-on-inverse:       rgba(255, 255, 255, 0.92); /* body text on dark/navy   */
+  --wzjh-text-on-inverse-muted: rgba(255, 255, 255, 0.72); /* muted text on dark/navy  */
+  --wzjh-link:           var(--wzjh-blue-700);
+  --wzjh-link-hover:     var(--wzjh-blue-800);
+
+  /* Surfaces */
+  --wzjh-surface:        var(--wzjh-white);     /* default page / card surface    */
+  --wzjh-surface-subtle: var(--wzjh-neutral-50);/* section band                   */
+  --wzjh-surface-sunken: var(--wzjh-neutral-100);
+  --wzjh-surface-inverse:var(--wzjh-blue-900);  /* dark sections, footer, hero    */
+  --wzjh-surface-brand:  var(--wzjh-blue-500);
+
+  /* Lines */
+  --wzjh-border:         var(--wzjh-neutral-300);
+  --wzjh-border-subtle:  var(--wzjh-neutral-150);
+  --wzjh-border-strong-c:var(--wzjh-neutral-400);
+  --wzjh-border-brand:   var(--wzjh-blue-500);
+
+  /* Status (each has bg + fg + solid, all contrast-checked) */
+  --wzjh-danger:         var(--wzjh-red-700);
+  --wzjh-danger-bg:      var(--wzjh-red-50);
+  --wzjh-danger-hover:   var(--wzjh-red-900);
+  --wzjh-success:        var(--wzjh-green-700);
+  --wzjh-success-bg:     var(--wzjh-green-50);
+  --wzjh-success-solid:  var(--wzjh-green-600);
+  --wzjh-warning:        var(--wzjh-amber-700);
+  --wzjh-warning-bg:     var(--wzjh-amber-50);
+  --wzjh-warning-solid:  var(--wzjh-amber-fill);
+  --wzjh-info:           var(--wzjh-blue-700);
+  --wzjh-info-bg:        var(--wzjh-blue-50);
+
+
+  /* ════════════════════════════════════════════════════════════════════════
+     LAYER 3 — COMPONENT TOKENS  (new components declare their tokens here)
+     ════════════════════════════════════════════════════════════════════════ */
+
+  /* Button — primary */
+  --wzjh-btn-primary-bg:        var(--wzjh-action);
+  --wzjh-btn-primary-fg:        var(--wzjh-white);
+  --wzjh-btn-primary-bg-hover:  var(--wzjh-action-hover);
+  /* Button — secondary (outline) */
+  --wzjh-btn-secondary-fg:      var(--wzjh-action);
+  --wzjh-btn-secondary-border:  var(--wzjh-action);
+  --wzjh-btn-secondary-bg-hover:var(--wzjh-action-subtle);
+  /* Button — danger (e-stop / destructive) */
+  --wzjh-btn-danger-bg:         var(--wzjh-danger);
+  --wzjh-btn-danger-fg:         var(--wzjh-white);
+  --wzjh-btn-danger-bg-hover:   var(--wzjh-danger-hover);
+
+  /* Spec table */
+  --wzjh-spec-label-bg:         var(--wzjh-neutral-50);
+  --wzjh-spec-label-fg:         var(--wzjh-text-secondary);
+  --wzjh-spec-value-fg:         var(--wzjh-text);
+  --wzjh-spec-row-border:       var(--wzjh-border-subtle);
+
+  /* Product card */
+  --wzjh-card-bg:               var(--wzjh-white);
+  --wzjh-card-border:           var(--wzjh-border-subtle);
+  --wzjh-card-shadow:           var(--wzjh-shadow-card);
+  --wzjh-card-shadow-hover:     var(--wzjh-shadow-hover);
+
+  /* Certification badge */
+  --wzjh-badge-bg:              var(--wzjh-neutral-50);
+  --wzjh-badge-fg:              var(--wzjh-text-secondary);
+  --wzjh-badge-border:          var(--wzjh-border);
+
+  /* Form input */
+  --wzjh-input-bg:              var(--wzjh-white);
+  --wzjh-input-border:          var(--wzjh-border);
+  --wzjh-input-border-focus:    var(--wzjh-action);
+  --wzjh-input-fg:              var(--wzjh-text);
+  --wzjh-input-placeholder:     var(--wzjh-text-disabled);
+
+  /* Header / nav */
+  --wzjh-header-bg:             var(--wzjh-white);
+  --wzjh-header-fg:             var(--wzjh-text);
+  --wzjh-nav-link:              var(--wzjh-text);
+  --wzjh-nav-link-active:       var(--wzjh-action);
+  --wzjh-nav-underline:         var(--wzjh-brand);
+
+  /* Footer */
+  --wzjh-footer-bg:             var(--wzjh-blue-900);
+  --wzjh-footer-fg:             rgba(255, 255, 255, 0.78);
+  --wzjh-footer-heading:        var(--wzjh-white);
+  --wzjh-footer-link-hover:     var(--wzjh-blue-300);
+
+
+  /* ════════════════════════════════════════════════════════════════════════
+     PRESENTATION / DECK MODE  (16:9 fixed canvas — see FOR-PRESENTATIONS.md)
+     ════════════════════════════════════════════════════════════════════════ */
+  --wzjh-slide-w:        1280px;          /* 16:9 base canvas                   */
+  --wzjh-slide-h:        720px;
+  --wzjh-slide-pad:      4rem 5rem;        /* safe margins (no projector clip)   */
+  --wzjh-slide-bg:       var(--wzjh-white);
+  --wzjh-slide-bg-band:  var(--wzjh-neutral-50);
+  --wzjh-slide-bg-dark:  var(--wzjh-blue-900);
+  --wzjh-slide-bg-brand: var(--wzjh-blue-500);
+  /* Deck type scale (larger — legible from the back of a room) */
+  --wzjh-slide-display:  4.5rem;  /* 72px title                                 */
+  --wzjh-slide-h1:       3rem;    /* 48px slide heading                         */
+  --wzjh-slide-h2:       2.25rem; /* 36px                                       */
+  --wzjh-slide-body:     1.5rem;  /* 24px — minimum readable body on a slide    */
+  --wzjh-slide-caption:  1.125rem;/* 18px                                       */
+  --wzjh-slide-num:      9rem;    /* 144px section number                       */
+}
+
+/* ── Locale-aware typography (CJK needs more leading, no negative tracking) ── */
+:lang(zh), :lang(zh-CN), [lang="zh"], [lang="zh-CN"] {
+  font-family: var(--wzjh-font-cjk);
+  line-height: var(--wzjh-lh-cjk);
+  letter-spacing: 0;          /* never negative tracking on CJK */
+}
+
+/* ── Motion preference ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --wzjh-duration-1: 0ms;
+    --wzjh-duration-2: 0ms;
+    --wzjh-duration-3: 0ms;
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="JINHONG — ZJWZJH">
+  <title>JINHONG (ZJWZJH) horizontal logo</title>
+  <!-- Brandmark -->
+  <g>
+    <path d="M28 34 L172 34 L100 184 Z" fill="#EAECEE"/>
+    <polyline points="50 58 78 128 100 86 122 128 150 58"
+              fill="none" stroke="#0BA1E2" stroke-width="22"
+              stroke-linejoin="miter" stroke-linecap="butt"/>
+    <path d="M112 50 L150 50 L142 66 L104 66 Z" fill="#0BA1E2"/>
+    <circle cx="160" cy="50" r="11" fill="#0BA1E2"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="208" y="104" font-family="Arial, Helvetica, sans-serif" font-size="58"
+        font-weight="700" letter-spacing="4" fill="#0BA1E2">ZJWZJH</text>
+  <text x="210" y="140" font-family="Arial, Helvetica, sans-serif" font-size="18"
+        font-weight="400" letter-spacing="3.5" fill="#2F2725">WENZHOU JINHONG ELECTRIC</text>
+</svg>

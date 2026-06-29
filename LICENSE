@@ -1,0 +1,46 @@
+MIT License (code, stylesheets, and design tokens)
+
+Copyright (c) 2026 Wenzhou Jinhong Electric Co., Ltd. (温州金宏电器有限公司)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the source code, stylesheets, and design-token files in this repository
+(the "Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, and to permit persons to whom
+the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+------------------------------------------------------------------------------
+EXCLUSIONS — NOT covered by the MIT license above
+------------------------------------------------------------------------------
+
+The following are proprietary and are NOT licensed for redistribution or reuse
+under the MIT terms. They are included or referenced only to enable authorized
+parties to produce on-brand material for Wenzhou Jinhong Electric Co., Ltd.:
+
+1. TRADEMARKS & BRAND NAMES — "JINHONG", "ZJWZJH", "Wenzhou Jinhong Electric",
+   "温州金宏电器有限公司", and associated names. Use of these marks is permitted
+   only for genuine JINHONG materials by JINHONG or its authorized partners.
+
+2. LOGO ARTWORK — the files in assets/logo/ and assets/favicon.svg. You may use
+   them to build genuine JINHONG materials; you may not modify, recolor, or use
+   them to imply endorsement, nor use them for any non-JINHONG purpose.
+
+3. THE "zt_rol" TYPEFACE — JINHONG's brand font is proprietary and is NOT
+   distributed in this repository. It is named first in the font stack for the
+   brand owner who holds a license. Everyone else: the stack falls back to
+   system fonts and the open-licensed "Noto Sans SC" (SIL OFL), so no font file
+   is required and nothing proprietary is redistributed. Do not bundle or host
+   "zt_rol" or "Microsoft YaHei" (also non-redistributable).
+
+If in doubt about brand or font usage, contact Wenzhou Jinhong Electric Co., Ltd.

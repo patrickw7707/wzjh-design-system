@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JINHONG — Wireless Energy-Harvesting Switches · 2026</title>
+  <meta name="description" content="JINHONG (WZJH) product presentation — Wireless Energy-Harvesting Switches · Wenzhou Jinhong Electric Co., Ltd.">
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../tokens/wzjh-tokens.css">
+  <link rel="stylesheet" href="../wzjh.css">
+  <link rel="stylesheet" href="deck.css">
+  <style>
+    /* Template-local layout helpers (showcase only) — all values reference --wzjh-* tokens */
+    body { background: var(--wzjh-neutral-100); }
+
+    /* Two-column layout for application/market slide */
+    .deck-app-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--wzjh-space-12);
+      align-items: center;
+      margin-top: var(--wzjh-space-8);
+    }
+    .deck-app-layout .deck-media-box {
+      aspect-ratio: 1;
+      background: var(--wzjh-white);
+      border-radius: var(--wzjh-radius-lg);
+      border: 1px solid var(--wzjh-border-subtle);
+      display: grid;
+      place-items: center;
+    }
+
+    /* Agenda slide — ordered list at deck body scale */
+    .deck-agenda {
+      display: grid;
+      gap: var(--wzjh-space-4);
+      margin-top: var(--wzjh-space-6);
+      counter-reset: agenda-item;
+      list-style: none;
+      padding: 0;
+      font-size: var(--wzjh-slide-body);
+      line-height: 1.4;
+    }
+    .deck-agenda li {
+      display: flex;
+      align-items: baseline;
+      gap: var(--wzjh-space-4);
+      padding: 0;
+    }
+    .deck-agenda li::before {
+      counter-increment: agenda-item;
+      content: "0" counter(agenda-item);
+      font-family: var(--wzjh-font-mono);
+      font-size: var(--wzjh-slide-caption);
+      color: var(--wzjh-brand);
+      font-weight: var(--wzjh-weight-bold);
+      flex: 0 0 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wzjh-deck">
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 1 · TITLE
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--title" aria-label="Title slide">
+    <img class="wzjh-slide__logo"
+         src="../assets/logo/wzjh-logo-white.svg"
+         alt="JINHONG">
+    <h1 class="wzjh-slide__display">Wireless Energy&#8209;Harvesting Switches</h1>
+    <p class="wzjh-slide__sub">
+      Battery&#8209;free control for elevators &amp; robotics
+      &thinsp;·&thinsp;<span lang="zh-CN">无线能量采集开关</span>
+      &thinsp;·&thinsp;2026
+    </p>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 2 · AGENDA
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide" aria-label="Agenda">
+    <span class="wzjh-overline">Agenda · <span lang="zh-CN">议程</span></span>
+    <h2 class="wzjh-slide__title">Today's Programme</h2>
+    <ol class="deck-agenda">
+      <li>Product Portfolio — LA22 metal pushbutton &amp; WS&#8209;E wireless switch</li>
+      <li>By the Numbers — mechanical life, sealing, global scale</li>
+      <li>Competitive Comparison — sealing, life, certifications, lead time</li>
+      <li>Applications — elevators, robotics, petrochemical, automotive</li>
+      <li>Why JINHONG — contact &amp; next steps</li>
+    </ol>
+    <div class="wzjh-slide__pageno">2 / 10</div>
+    <div class="wzjh-slide__brandfoot">JINHONG · ZJWZJH</div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 3 · SECTION DIVIDER — 01 Product Portfolio
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--divider" aria-label="Section 01: Product Portfolio">
+    <div class="wzjh-slide__num" aria-hidden="true">01</div>
+    <div>
+      <h2 class="wzjh-slide__title">Product Portfolio</h2>
+      <p lang="zh-CN" class="wzjh-slide__sub">产品系列</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 4 · PRODUCT SPEC — LA22 Metal Pushbutton
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--spec" aria-label="LA22 metal pushbutton specification">
+    <div class="wzjh-slide__media">
+      <img src="../assets/logo/wzjh-mark.svg"
+           alt="LA22 Ø22 mm metal pushbutton"
+           width="260">
+    </div>
+    <div>
+      <span class="wzjh-overline">Metal Pushbutton · <span lang="zh-CN">金属按钮</span></span>
+      <h2 class="wzjh-slide__title">LA22 Series</h2>
+      <table class="wzjh-spec">
+        <tbody>
+          <tr><th scope="row">Mounting diameter</th><td>Ø22 mm</td></tr>
+          <tr><th scope="row">Rated current</th><td>10 A</td></tr>
+          <tr><th scope="row">Rated voltage</th><td>24–380 V AC/DC</td></tr>
+          <tr><th scope="row">Protection</th><td>IP67 · IK10</td></tr>
+          <tr><th scope="row">Mechanical life</th><td>1,000,000 ops</td></tr>
+          <tr><th scope="row">Temperature</th><td>−25 °C … +70 °C</td></tr>
+        </tbody>
+      </table>
+      <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-5)">
+        <span class="wzjh-badge wzjh-badge--cert">CE</span>
+        <span class="wzjh-badge wzjh-badge--cert">UL</span>
+        <span class="wzjh-badge wzjh-badge--cert">RoHS</span>
+        <span class="wzjh-badge wzjh-badge--cert">CCC</span>
+        <span class="wzjh-badge wzjh-badge--cert">IP67</span>
+        <span class="wzjh-badge wzjh-badge--cert">IK10</span>
+      </div>
+    </div>
+    <div class="wzjh-slide__pageno">4 / 10</div>
+    <div class="wzjh-slide__brandfoot">JINHONG · ZJWZJH</div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 5 · PRODUCT SPEC — WS-E Wireless Energy-Harvesting Switch
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--spec" aria-label="WS-E wireless switch specification">
+    <div class="wzjh-slide__media">
+      <img src="../assets/logo/wzjh-mark.svg"
+           alt="WS-E battery-free wireless energy-harvesting switch"
+           width="260">
+    </div>
+    <div>
+      <span class="wzjh-overline">Wireless Switch · <span lang="zh-CN">无线开关</span></span>
+      <h2 class="wzjh-slide__title">WS&#8209;E Series</h2>
+      <table class="wzjh-spec">
+        <tbody>
+          <tr><th scope="row">Power source</th><td>Energy-harvesting — no battery</td></tr>
+          <tr><th scope="row">Wiring</th><td>None — retrofit-ready</td></tr>
+          <tr><th scope="row">Protocol</th><td>EnOcean 928 MHz</td></tr>
+          <tr><th scope="row">Range (open air)</th><td>30 m</td></tr>
+          <tr><th scope="row">Protection</th><td>IP65</td></tr>
+          <tr><th scope="row">Actuation force</th><td>&lt; 2.5 N generates signal</td></tr>
+        </tbody>
+      </table>
+      <div class="wzjh-cluster" style="margin-top:var(--wzjh-space-5)">
+        <span class="wzjh-badge wzjh-badge--cert">CE</span>
+        <span class="wzjh-badge wzjh-badge--cert">RoHS</span>
+        <span class="wzjh-badge wzjh-badge--cert">IP65</span>
+        <span class="wzjh-badge wzjh-badge--cert">EnOcean</span>
+      </div>
+    </div>
+    <div class="wzjh-slide__pageno">5 / 10</div>
+    <div class="wzjh-slide__brandfoot">JINHONG · ZJWZJH</div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 6 · STAT BAND
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide" aria-label="Key statistics">
+    <span class="wzjh-overline">By the Numbers · <span lang="zh-CN">数字说话</span></span>
+    <h2 class="wzjh-slide__title">JINHONG at a Glance</h2>
+    <div class="wzjh-slide__stats">
+      <div class="wzjh-stat">
+        <div class="wzjh-stat__num">12</div>
+        <div class="wzjh-stat__label">
+          Product families<br>
+          <span lang="zh-CN">产品系列</span>
+        </div>
+      </div>
+      <div class="wzjh-stat">
+        <div class="wzjh-stat__num">1M</div>
+        <div class="wzjh-stat__label">
+          Rated op. life<br>
+          <span lang="zh-CN">机械寿命</span>
+        </div>
+      </div>
+      <div class="wzjh-stat">
+        <div class="wzjh-stat__num">IP67</div>
+        <div class="wzjh-stat__label">
+          Sealed to<br>
+          <span lang="zh-CN">防护等级</span>
+        </div>
+      </div>
+      <div class="wzjh-stat">
+        <div class="wzjh-stat__num">6</div>
+        <div class="wzjh-stat__label">
+          Global markets<br>
+          <span lang="zh-CN">覆盖市场</span>
+        </div>
+      </div>
+    </div>
+    <div class="wzjh-slide__pageno">6 / 10</div>
+    <div class="wzjh-slide__brandfoot">JINHONG · ZJWZJH</div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 7 · COMPARISON — JINHONG vs Generic A vs Generic B
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--compare" aria-label="Competitive comparison">
+    <span class="wzjh-overline">Competitive Comparison · <span lang="zh-CN">竞争对比</span></span>
+    <h2 class="wzjh-slide__title">How We Stack Up</h2>
+    <div class="wzjh-compare">
+
+      <div class="wzjh-compare__col wzjh-compare__col--us">
+        <h3>JINHONG</h3>
+        <ul>
+          <li>IP67 · IK10 dual sealing</li>
+          <li>1,000,000-op rated life</li>
+          <li>CE · UL · CCC certified</li>
+          <li>4-week standard lead time</li>
+          <li>Full OEM / ODM support</li>
+        </ul>
+      </div>
+
+      <div class="wzjh-compare__col wzjh-compare__col--muted">
+        <h3>Generic A</h3>
+        <ul>
+          <li>IP65 only</li>
+          <li>500,000-op rated life</li>
+          <li>CE mark only</li>
+          <li>8–12 week lead time</li>
+          <li>No OEM option</li>
+        </ul>
+      </div>
+
+      <div class="wzjh-compare__col wzjh-compare__col--muted">
+        <h3>Generic B</h3>
+        <ul>
+          <li>IP54 rating</li>
+          <li>300,000-op rated life</li>
+          <li>CE mark only</li>
+          <li>Stock items — no custom</li>
+          <li>No OEM option</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="wzjh-slide__pageno">7 / 10</div>
+    <div class="wzjh-slide__brandfoot">JINHONG · ZJWZJH</div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 8 · APPLICATION / MARKET
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide" aria-label="Application markets">
+    <span class="wzjh-overline">Applications · <span lang="zh-CN">应用领域</span></span>
+    <h2 class="wzjh-slide__title">Built for the Harshest Environments</h2>
+    <div class="deck-app-layout">
+      <div class="deck-media-box">
+        <img src="../assets/logo/wzjh-mark.svg"
+             alt="Industrial control application"
+             width="180"
+             style="filter:var(--wzjh-shadow-product)">
+      </div>
+      <ul>
+        <li>Elevators &amp; escalators</li>
+        <li>Industrial robotics &amp; CNC</li>
+        <li>Petrochemical plants</li>
+        <li>Automotive assembly lines</li>
+        <li>Packaging machinery</li>
+        <li>Crane &amp; lifting equipment</li>
+      </ul>
+    </div>
+    <div class="wzjh-slide__pageno">8 / 10</div>
+    <div class="wzjh-slide__brandfoot">JINHONG · ZJWZJH</div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 9 · SECTION DIVIDER — 02 Why JINHONG
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--divider" aria-label="Section 02: Why JINHONG">
+    <div class="wzjh-slide__num" aria-hidden="true">02</div>
+    <div>
+      <h2 class="wzjh-slide__title">Why JINHONG</h2>
+      <p lang="zh-CN" class="wzjh-slide__sub">为什么选择金宏</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────────────
+       SLIDE 10 · CONTACT / CTA
+       ───────────────────────────────────────────────────────────────────────── -->
+  <section class="wzjh-slide wzjh-slide--cta" aria-label="Contact and call to action">
+
+    <div class="wzjh-slide__qr" aria-label="WeChat QR code placeholder">
+      <div style="text-align:center;padding:var(--wzjh-space-4)">
+        <p style="font-size:var(--wzjh-slide-caption);font-weight:var(--wzjh-weight-bold);margin:0 0 var(--wzjh-space-3)">
+          Scan · <span lang="zh-CN">微信</span>
+        </p>
+        <p style="font-size:var(--wzjh-slide-caption);color:var(--wzjh-text-muted);margin:0">
+          [QR code here]
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <span class="wzjh-overline">Get in Touch · <span lang="zh-CN">联系我们</span></span>
+      <h2 class="wzjh-slide__title" style="margin-bottom:var(--wzjh-space-5)">Let's Talk</h2>
+      <address style="font-style:normal;font-size:var(--wzjh-slide-body);line-height:var(--wzjh-lh-body)">
+        <p style="margin:0 0 var(--wzjh-space-3)">
+          <strong>Wenzhou Jinhong Electric Co., Ltd.</strong><br>
+          <span lang="zh-CN">温州金宏电器有限公司</span>
+        </p>
+        <p style="margin:0 0 var(--wzjh-space-3)">
+          Wenzhou, Zhejiang Province, China<br>
+          <span lang="zh-CN">中国浙江省温州市</span>
+        </p>
+        <p style="margin:0">
+          <a href="https://www.wzjh.cc" style="color:var(--wzjh-action);font-family:var(--wzjh-font-mono)">www.wzjh.cc</a>
+        </p>
+      </address>
+    </div>
+
+    <div class="wzjh-slide__watermark" aria-hidden="true">ZJWZJH</div>
+
+  </section>
+
+</div><!-- /.wzjh-deck -->
+
+</body>
+</html>

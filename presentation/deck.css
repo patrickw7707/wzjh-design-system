@@ -1,0 +1,101 @@
+/* ============================================================================
+   JINHONG (WZJH) Design System — Presentation / Deck styles
+   Depends on ../tokens/wzjh-tokens.css. See ../FOR-PRESENTATIONS.md.
+   Fixed 16:9 canvas (1280×720), scaled to fit. Print-safe.
+   ============================================================================ */
+
+.wzjh-deck {
+  --slide-scale: 1;
+  font-family: var(--wzjh-font-sans);
+  color: var(--wzjh-text);
+  background: var(--wzjh-neutral-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--wzjh-space-6);
+  padding: var(--wzjh-space-6);
+}
+
+/* One slide = fixed 16:9 canvas. Scrolling preview stacks them. */
+.wzjh-slide {
+  position: relative;
+  width: var(--wzjh-slide-w);
+  height: var(--wzjh-slide-h);
+  padding: var(--wzjh-slide-pad);
+  background: var(--wzjh-slide-bg);
+  color: var(--wzjh-text);
+  overflow: hidden;
+  box-shadow: var(--wzjh-shadow-hover);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wzjh-slide__display { font-size: var(--wzjh-slide-display); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+.wzjh-slide__title   { font-size: var(--wzjh-slide-h1); font-weight: 700; line-height: 1.15; margin: 0 0 var(--wzjh-space-6); }
+.wzjh-slide__sub     { font-size: var(--wzjh-slide-body); color: var(--wzjh-text-secondary); margin-top: var(--wzjh-space-5); }
+.wzjh-slide :lang(zh) { letter-spacing: 0; line-height: var(--wzjh-lh-cjk); }
+.wzjh-slide .wzjh-overline { font-size: var(--wzjh-slide-caption); }
+.wzjh-slide ul { font-size: var(--wzjh-slide-body); line-height: 1.5; display: grid; gap: var(--wzjh-space-4); }
+.wzjh-slide li { padding-left: 1.75rem; position: relative; }
+.wzjh-slide li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 0.75rem; height: 0.75rem; background: var(--wzjh-brand); }
+
+/* Page number / footer brand */
+.wzjh-slide__pageno { position: absolute; right: var(--wzjh-space-12); bottom: var(--wzjh-space-8); font-size: var(--wzjh-slide-caption); color: var(--wzjh-text-muted); font-family: var(--wzjh-font-mono); }
+.wzjh-slide__brandfoot { position: absolute; left: var(--wzjh-space-12); bottom: var(--wzjh-space-8); font-size: var(--wzjh-slide-caption); color: var(--wzjh-text-muted); letter-spacing: 0.1em; }
+
+/* ① Title — the only dark canvas */
+.wzjh-slide--title { background: var(--wzjh-slide-bg-dark); color: var(--wzjh-white); justify-content: center; }
+.wzjh-slide--title .wzjh-slide__display { color: var(--wzjh-white); max-width: 22ch; }
+.wzjh-slide--title .wzjh-slide__sub { color: rgba(255,255,255,0.75); }
+.wzjh-slide--title .wzjh-slide__logo { height: 3rem; width: auto; margin-bottom: var(--wzjh-space-10); }
+.wzjh-slide--title::after { /* brand accent rule */
+  content: ""; position: absolute; left: 5rem; bottom: 8rem; width: 8rem; height: 0.375rem; background: var(--wzjh-brand);
+}
+
+/* ② Section divider — light band, giant number */
+.wzjh-slide--divider { background: var(--wzjh-slide-bg-band); flex-direction: row; align-items: center; gap: var(--wzjh-space-12); }
+.wzjh-slide--divider .wzjh-slide__num { font-size: var(--wzjh-slide-num); font-weight: 700; color: var(--wzjh-brand); line-height: 0.8; font-variant-numeric: tabular-nums; }
+.wzjh-slide--divider .wzjh-slide__title { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 0.02em; margin: 0; }
+.wzjh-slide--divider :lang(zh).wzjh-slide__title { text-transform: none; }
+
+/* ③ Product spec — 50/50 */
+.wzjh-slide--spec { flex-direction: row; align-items: center; gap: var(--wzjh-space-16); }
+.wzjh-slide--spec .wzjh-slide__media { flex: 0 0 42%; display: grid; place-items: center; }
+.wzjh-slide--spec .wzjh-slide__media img { filter: var(--wzjh-shadow-product); max-height: 420px; }
+.wzjh-slide--spec .wzjh-spec { font-size: var(--wzjh-slide-caption); }
+.wzjh-slide--spec .wzjh-spec th, .wzjh-slide--spec .wzjh-spec td { padding: var(--wzjh-space-3) var(--wzjh-space-4); }
+
+/* ④ Comparison — 3 columns */
+.wzjh-slide--compare { justify-content: flex-start; }
+.wzjh-compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--wzjh-space-6); margin-top: var(--wzjh-space-8); font-size: var(--wzjh-slide-caption); }
+.wzjh-compare__col { border: 1px solid var(--wzjh-border); border-radius: var(--wzjh-radius-lg); padding: var(--wzjh-space-6); background: var(--wzjh-white); }
+.wzjh-compare__col--us { border: 2px solid var(--wzjh-brand); box-shadow: var(--wzjh-shadow-card); }
+.wzjh-compare__col--muted { color: var(--wzjh-text-muted); background: var(--wzjh-neutral-50); }
+.wzjh-compare h3 { font-size: var(--wzjh-slide-body); }
+.wzjh-compare li::before { background: var(--wzjh-success); }
+.wzjh-compare__col--muted li::before { background: var(--wzjh-neutral-400); }
+
+/* ⑤ Contact / CTA */
+.wzjh-slide--cta { flex-direction: row; align-items: center; gap: var(--wzjh-space-16); }
+.wzjh-slide--cta .wzjh-slide__qr { flex: 0 0 auto; width: 260px; height: 260px; border: 1px solid var(--wzjh-border); border-radius: var(--wzjh-radius-lg); display: grid; place-items: center; background: var(--wzjh-white); color: var(--wzjh-text-muted); }
+.wzjh-slide--cta .wzjh-slide__watermark { position: absolute; right: -2rem; bottom: -3rem; font-size: 12rem; font-weight: 700; color: var(--wzjh-neutral-50); letter-spacing: 0.05em; z-index: 0; }
+.wzjh-slide--cta > * { position: relative; z-index: 1; }
+
+/* Stat band slide helper */
+.wzjh-slide__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--wzjh-space-8); margin-top: var(--wzjh-space-8); }
+.wzjh-slide__stats .wzjh-stat__num { font-size: 3.5rem; }
+.wzjh-slide__stats .wzjh-stat__label { font-size: var(--wzjh-slide-caption); }
+
+/* Print: one slide per page, backgrounds on */
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body { background: #fff; }
+  .wzjh-deck { gap: 0; padding: 0; background: #fff; }
+  .wzjh-slide { box-shadow: none; page-break-after: always; break-after: page; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* Fit-to-viewport scaling for live presenting (optional JS sets --slide-scale). */
+@media screen and (max-width: 1360px) {
+  .wzjh-deck { --slide-scale: calc((100vw - 3rem) / 1280); }
+  .wzjh-slide { transform: scale(var(--slide-scale)); transform-origin: top center; margin-bottom: calc((var(--slide-scale) - 1) * 720px); }
+}
